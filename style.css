@@ -1,0 +1,166 @@
+body > nav > ul {
+  display: flex;
+  padding: 0px;
+}
+#scroll-body {
+  height: 12000px;
+}
+.home {
+  background: url("images/sec-01-bg.jpg") no-repeat;
+  height: 720px;
+}
+
+.journey {
+  background: url("images/sec-02-bg.jpg") no-repeat;
+  height: 720px;
+  /*background-attachment: fixed;*/
+  position: relative;
+  overflow: hidden;
+}
+.triangle {
+  position: absolute;
+  top: auto;
+  left: 0;
+  width: 100%;
+}
+.tire {
+  opacity: 1;
+  position: absolute;
+  top: -9%;
+  left: 100%;
+  transform: rotate(360deg);
+  display: block;
+  /*animation-name: roll;*/
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+.shadow {
+  position: absolute;
+  top: -9%;
+  left: 100%;
+  /*animation-name: shadowMove;*/
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes roll {
+  from { left: 100%; transform: rotate(360deg)}
+  to { left: -55%; transform: rotate(0deg)}
+}
+@keyframes shadowMove {
+  from {left: 100%}
+  to {left: -55%}
+}
+
+
+
+/*===================================section journey===========================================*/
+.flexslider1 {
+  width: 800px;
+  position: absolute;
+  left: 95px;
+  top: 100px;
+}
+.flex-viewport {
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  padding: 0px;
+  width: 800%;
+}
+.slides > li {
+  padding-top: 380px;
+  width: 800px;
+  /*float: left;*/
+  display: block;
+  position: relative;
+}
+
+.slides li img {
+  position: absolute;
+  top: 140px;
+  right: 0;
+}
+.flex-prev {
+  position: absolute;
+  top:50%;
+  left: -95px;
+  background: url("images/btn-arrow.png") no-repeat;
+  width: 53px;
+  height: 89px;
+}
+.flex-next {
+  position: absolute;
+  top:50%;
+  right: -95px;
+  background: url("images/btn-arrow.png") no-repeat;
+  width: 53px;
+  height: 89px;
+}
+.timeline-wrapper {
+  position: absolute;
+  top: 640px;
+  left: 50%;
+  width: 422px;
+  margin-left: -211px;
+}
+#timeline-bar {
+  background: url("images/timeline-gray.png") no-repeat;
+  width: 100%;
+  height: 14px;
+}
+#timeline-bar-current {
+  background: url("images/timeline-blue.png") no-repeat;
+  height: 14px;
+  width: 41px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#timeline-years {
+  display: flex;
+  padding: 0px;
+  position: absolute;
+  /*left: 42px;*/
+  bottom: 0;
+  padding-bottom: 14px;
+  list-style-type: none;
+  width: 422px;
+  justify-content: space-between;
+}
+#timeline-years > li a {
+  text-decoration: none;
+}
+
+
+
+/*=====================section dna=================*/
+
+.dna {
+  background: black;
+  position: relative;
+  width: 100%;
+  height: calc(100vh + 68px);
+  overflow: hidden;
+}
+.dna img {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.dna-mini {
+  background: url("images/sec-03-dna-mini.png") no-repeat left top;
+  position: absolute;
+  left: 0;
+  top: 220px;
+  width: 100%;
+  height: 0px;
+}
+.bg-radial {
+  background: url("images/sec-03a-bg.png") no-repeat left center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
