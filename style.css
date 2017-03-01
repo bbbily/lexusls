@@ -1,32 +1,48 @@
-body > nav > ul {
+/*body > nav > ul {
   display: flex;
   padding: 0px;
-}
+}*/
+
+/*===========================section home========================*/
 #scroll-body {
   height: 12000px;
 }
 .home {
-  background: url("images/sec-01-bg.jpg") no-repeat;
+  background: url("images/sec-01-bg.jpg") no-repeat center top;
+  background-size: cover;
   height: 720px;
 }
 
+
+
+
+
+/*=============================section journey=========================*/
+
 .journey {
-  background: url("images/sec-02-bg.jpg") no-repeat;
+  background: url("images/sec-02-bg.jpg") no-repeat center;
+  background-size: cover;
+}
+.journey-container {
+
   height: 720px;
+  width: 100%;
   /*background-attachment: fixed;*/
   position: relative;
   overflow: hidden;
+  /*left: 95px;*/
 }
 .triangle {
   position: absolute;
   top: auto;
   left: 0;
   width: 100%;
+  z-index: 1;
 }
 .tire {
   opacity: 1;
   position: absolute;
-  top: -9%;
+  top: 5px;
   left: 100%;
   transform: rotate(360deg);
   display: block;
@@ -36,7 +52,7 @@ body > nav > ul {
 }
 .shadow {
   position: absolute;
-  top: -9%;
+  top: 5px;
   left: 100%;
   /*animation-name: shadowMove;*/
   animation-duration: 2s;
@@ -45,20 +61,20 @@ body > nav > ul {
 
 @keyframes roll {
   from { left: 100%; transform: rotate(360deg)}
-  to { left: -55%; transform: rotate(0deg)}
+  to { left: -500px; transform: rotate(0deg)}
 }
 @keyframes shadowMove {
   from {left: 100%}
-  to {left: -55%}
+  to {left: -500px}
 }
 
 
 
-/*===================================section journey===========================================*/
+/*=========================section journey=slides=========================================*/
 .flexslider1 {
   width: 800px;
   position: absolute;
-  left: 95px;
+  left: calc(50% - 400px);
   top: 100px;
 }
 .flex-viewport {
@@ -69,13 +85,14 @@ body > nav > ul {
   display: flex;
   padding: 0px;
   width: 800%;
+  list-style-type: none;
 }
 .slides > li {
   padding-top: 380px;
   width: 800px;
-  /*float: left;*/
   display: block;
   position: relative;
+  list-style-type: none;
 }
 
 .slides li img {
@@ -83,9 +100,12 @@ body > nav > ul {
   top: 140px;
   right: 0;
 }
+.flex-arrow {
+  list-style-type: none;
+}
 .flex-prev {
   position: absolute;
-  top:50%;
+  top: 50%;
   left: -95px;
   background: url("images/btn-arrow.png") no-repeat;
   width: 53px;
@@ -149,13 +169,17 @@ body > nav > ul {
   position: absolute;
   top: 0;
   right: 0;
+  opacity: 0;
+}
+#mini1 {
+  opacity: 1;
 }
 .dna-mini {
   background: url("images/sec-03-dna-mini.png") no-repeat left top;
   position: absolute;
   left: 0;
-  top: 220px;
-  width: 100%;
+  top: 320px;
+  width: 150px;
   height: 0px;
 }
 .bg-radial {
@@ -163,4 +187,103 @@ body > nav > ul {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+.active * {
+  opacity: 0;
+}
+.active h1 {
+  font-size: 48px;
+  color: white;
+}
+.active p {
+  font-size: 20px;
+  color: white;
+}
+
+.firsth1 {
+  position: absolute;
+  top: 150px;
+  left: 250px;
+  width: 600px;
+}
+.secondh1 {
+  position: absolute;
+  top: 250px;
+  left: 300px;
+  width: 600px;
+}
+.firstp {
+  position: absolute;
+  top: 350px;
+  left: 450px;
+  width: 600px;
+}
+.secondp {
+  position: absolute;
+  top: 400px;
+  left: 550px;
+  width: 600px;
+}
+.thirdp {
+  position: absolute;
+  top: 450px;
+  left: 550px;
+  width: 600px;
+}
+.forthp {
+  position: absolute;
+  top: 550px;
+  left: 450px;
+  width: 600px;
+}
+
+
+
+/*============================section dna cells==============================*/
+
+.dna-thumbnail1 {
+  background: url("images/sec-03b-bg.jpg") no-repeat right;
+  background-size: cover;
+  position: absolute;
+  top: 4160px;
+  width: 100%;
+  height: 836px;
+  /*z-index: -1;*/
+}
+.dna-thumbnail2 {
+  background: url("images/sec-03c-bg.jpg") no-repeat right;
+  background-size: cover;
+  position: absolute;
+  top: 5164px;
+  height: 836px;
+  width: 100%;
+  overflow-x: hidden;
+}
+#thumbnail1, #thumbnail1-shadow, #thumbnail2, #thumbnail2-shadow {
+  position: fixed;
+  top: 505px;
+  transform: matrix(1, 0, 0.3, 1, 200, 0);
+  opacity: 0;
+}
+
+
+/*================================section technologies=======================*/
+
+.technologies {
+  background: url("images/sec-03d-bg.jpg") no-repeat center;
+  background-size: cover;
+  position: absolute;
+  top: 7000px;
+  height: 100%;
+  width: 100%;
+}
+
+.smoothness {
+  background: url("images/sec-03e-bg.jpg") no-repeat center;
+  background-size: cover;
+  position: absolute;
+  top: 7682px;
+  height: 1178px;
+  width: 100%;
 }
