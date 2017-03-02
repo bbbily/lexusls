@@ -5,7 +5,7 @@
 
 /*===========================section home========================*/
 #scroll-body {
-  height: 12000px;
+  height: 20000px;
 }
 .home {
   background: url("images/sec-01-bg.jpg") no-repeat center top;
@@ -280,10 +280,66 @@
 }
 
 .smoothness {
-  background: url("images/sec-03e-bg.jpg") no-repeat center;
+  background: url("images/sec-03e-bg.jpg") no-repeat bottom;
   background-size: cover;
   position: absolute;
   top: 7682px;
-  height: 1178px;
+  height: 918px;
   width: 100%;
+  /*overflow-x: hidden;*/
+}
+
+
+/*======================section car-sequence====================*/
+
+
+.car-sequence {
+  background-color: black;
+  position: absolute;
+  top: 9700px;
+  width: 100%;
+  height: 920px;
+  overflow: hidden;
+}
+
+.car-pics > img {
+  position: absolute;
+  left: 50%;
+  margin-left: -640px;
+  opacity: 0;
+}
+
+.black-bg {
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  opacity: 0;
+}
+
+
+
+/*=========================section car-details=====================*/
+
+.car-details {
+  position: absolute;
+  width: 100%;
+  top: 12500px;
+  /*height: 100vh;*/
+}
+
+.slides2 {
+  height: 800px;
+  list-style-type: none;
+}
+.slides2 > li {
+  width: 100%;
+  float: left;
+  height: 100vh;
+  /*margin-top: 68px;*/
+  /*height: calc(100% - 68px);*/
+}
+.slides2 > li > img {
+
 }

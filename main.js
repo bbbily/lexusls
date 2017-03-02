@@ -5,6 +5,8 @@ $(document).ready(function() {
     var wScroll = $(this).scrollTop();
     console.log(wScroll)
 
+
+
     ////////////tire ////////////////
     // tire animation home top value 0, journey top value 720
     if (wScroll > $(".home").offset().top + 350 && wScroll < $(".journey").offset().top) {
@@ -23,6 +25,7 @@ $(document).ready(function() {
         "animation-name": "none"
       })
     }
+
 
 
     /////////////////dna /////////////////////
@@ -104,11 +107,11 @@ $(document).ready(function() {
     //dna cells move animation, thumbnail1top value 4160
     if (wScroll >= 4160 && wScroll < 5164) {
       $("#thumbnail1").css({
-        "transform": "matrix(1, "+(0-(wScroll-4160)/836*0.2) +","+(0-(wScroll-4160)/836*0.3)+",1,"+((wScroll-4160)/836*100)+",0)",
+        "transform": "matrix(1, "+(0-(wScroll-4160)/996*0.2) +","+(0-(wScroll-4160)/996*0.3)+",1,"+((wScroll-4160)/996*100)+",0)",
         "top": (505 - wScroll + 4160) + "px"
       })
       $("#thumbnail1-shadow").css({
-        "transform": "matrix(1, "+(0-(wScroll-4160)/836*0.2) +","+(0-(wScroll-4160)/836*0.3)+",1,"+((wScroll-4160)/836*200)+",0)",
+        "transform": "matrix(1, "+(0-(wScroll-4160)/996*0.2) +","+(0-(wScroll-4160)/996*0.3)+",1,"+((wScroll-4160)/996*200)+",0)",
         "top": (505 - wScroll + 4160) + "px"
       })
       $(".dna-thumbnail2").css({
@@ -133,6 +136,8 @@ $(document).ready(function() {
       })
     }
 
+
+
     ////////////////////////////technologies//////////////////////////////////
     // technologies value 7000 , smoothness value 8000
     //top cells animation
@@ -153,7 +158,7 @@ $(document).ready(function() {
       })
     }
     //cells visible and invisible
-    if (wScroll > 7000 && wScroll <= 8860) {
+    if (wScroll > 7000 && wScroll <= 9700) {
       $("#thumbnail2").css({
         "opacity": 1
       })
@@ -161,7 +166,7 @@ $(document).ready(function() {
         "opacity": 1
       })
     }
-    if (wScroll < 6660 || wScroll > 8860) {
+    if (wScroll < 6660 || wScroll > 9700) {
       $("#thumbnail2").css({
         "opacity": 0
       })
@@ -169,8 +174,8 @@ $(document).ready(function() {
         "opacity": 0
       })
     }
-    //dna cells move animation, thumbnail1top value 7000
-    if (wScroll >= 7000 && wScroll < 8000) {
+    //dna cells move animation, thumbnail2top value 7000
+    if (wScroll >= 7000 && wScroll < 7850) {
       $("#thumbnail2").css({
         "transform": "matrix(1, "+(0-(wScroll-7000)/1000*0.2) +","+(0-(wScroll-7000)/1000*0.3)+",1,"+((wScroll-7000)/1000*100)+",0)",
         "top": (505 - wScroll + 7000) + "px"
@@ -183,6 +188,80 @@ $(document).ready(function() {
         "position": "absolute",
         "top": "5164px"
       })
+      $(".smoothness").css({
+        "position": "absolute",
+        "top": "7682px"
+      })
+    }
+    //dna cells stop moving, thumbnail2top value 5164
+    //change dna-thumbnail2 position
+    if (wScroll >= 7850 && wScroll <= 9700) {
+      $(".smoothness").css({
+        "position": "fixed",
+        "top": "-168px"
+      })
+      $("#thumbnail2").css({
+        "transform": "matrix(1, "+((wScroll-7850)/1850*0.5-0.2) +","+((wScroll-7850)/1850*0.6-0.3)+",1,100,0)",
+        "top": "-400px"
+      })
+      $("#thumbnail2-shadow").css({
+        "transform": "matrix(1, "+((wScroll-7850)/1850*0.5-0.2) +","+((wScroll-7850)/1850*0.6-0.3)+",1,"+(200-(wScroll-7850)/1836*100)+",0)",
+        "top": "-400px"
+      })
+      $(".car-sequence").css({
+        "position": "absolute",
+        "top": "9700px"
+      })
+      $(".car-pics").find("img").css({
+        "opacity": "0"
+      })
+    }
+
+
+
+    // car-sequence////////////////////////////////////
+    // change car pics, car-sequencetop value 9700
+    if (wScroll > 9700 && wScroll <= 11700) {
+      $(".smoothness").css({
+        "position": "absolute",
+        "top": "7682px"
+      })
+      $(".car-sequence").css({
+        "position": "fixed",
+        "top": "0"
+      })
+      if (wScroll > 9700 && wScroll <= 10100)
+        $("#bg1").css({
+          "opacity": (wScroll - 9700) / 400
+        })
+      if (wScroll > 10100 && wScroll <= 10500)
+        $("#bg2").css({
+          "opacity": (wScroll - 10100) / 400
+        })
+      if (wScroll > 10500 && wScroll <= 10900)
+        $("#bg3").css({
+          "opacity": (wScroll - 10500) / 400
+        })
+      if (wScroll > 10900 && wScroll <= 11300)
+        $("#bg4").css({
+          "opacity": (wScroll - 10900) / 400
+        })
+      if (wScroll > 11300 && wScroll <= 11700)
+        $(".black-bg").css({
+          "opacity": (wScroll - 11300) / 400
+        })
+    }
+
+
+
+    /////car-details top value 11700
+    if (wScroll > 11700 && wScroll <= 13000) {
+      $(".car-sequence").css({
+        "position": "absolute",
+        "top": "11700px"
+      })
+    }
+    if (wScroll > 13000) {
     }
   }
   $(window).scroll(function() {
