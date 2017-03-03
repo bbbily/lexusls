@@ -2,19 +2,38 @@
   display: flex;
   padding: 0px;
 }*/
-
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+h1 {
+  font-size: 48px;
+}
 /*===========================section home========================*/
 #scroll-body {
   height: 20000px;
 }
 .home {
-  background: url("images/sec-01-bg.jpg") no-repeat center top;
-  background-size: cover;
+  background: url("images/sec-01-bg.jpg") no-repeat center;
+  /*background-size: cover;*/
+  width: 100%;
+  background-color: #d4dbdb;
   height: 720px;
+  text-align: center;
+  position: relative;
 }
-
-
-
+.home h1 {
+  padding: 80px 0 10px 0;
+}
+h3{
+  font-size: 30px;
+  padding: 10px 0;
+}
+.home > img {
+  position: absolute;
+  bottom: 87.5px;
+  z-index: 20;
+  cursor: pointer;
+}
 
 
 /*=============================section journey=========================*/
@@ -24,21 +43,12 @@
   background-size: cover;
 }
 .journey-container {
-
   height: 720px;
   width: 100%;
-  /*background-attachment: fixed;*/
   position: relative;
   overflow: hidden;
-  /*left: 95px;*/
 }
-.triangle {
-  position: absolute;
-  top: auto;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-}
+
 .tire {
   opacity: 1;
   position: absolute;
@@ -46,7 +56,6 @@
   left: 100%;
   transform: rotate(360deg);
   display: block;
-  /*animation-name: roll;*/
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
@@ -54,7 +63,6 @@
   position: absolute;
   top: 5px;
   left: 100%;
-  /*animation-name: shadowMove;*/
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
@@ -74,8 +82,11 @@
 .flexslider1 {
   width: 800px;
   position: absolute;
-  left: calc(50% - 400px);
-  top: 100px;
+  left: 200px;
+  right: 200px;
+  margin: auto;
+  top: 640px;
+  opacity: 0;
 }
 .flex-viewport {
   overflow: hidden;
@@ -95,13 +106,53 @@
   list-style-type: none;
 }
 
+.slides li.first h1 {
+  position: absolute;
+  top: 35%;
+}
+.slides li.first #p1 {
+  position: absolute;
+  top: 50%;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+.slides li.first #p2 {
+  position: absolute;
+  top: 65%;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+.slides li p {
+  font-size: 18px;
+  line-height: 1.5em;
+}
+.slides li h1.year {
+  color: #dfdfdf;
+  font-size: 220px;
+  font-weight: 900;
+  position: absolute;
+  top: -20px;
+  left: 0px;
+  letter-spacing: -10px;
+}
 .slides li img {
   position: absolute;
-  top: 140px;
-  right: 0;
+  /*top: 140px;
+  right: 0;*/
+  top: 80px;
+  right: -616px;
+  opacity: 0;
 }
+
+@keyframes carMove {
+  from {left: 100%}
+  to {left: -500px}
+}
+
+
 .flex-arrow {
   list-style-type: none;
+  cursor: pointer;
 }
 .flex-prev {
   position: absolute;
@@ -110,6 +161,7 @@
   background: url("images/btn-arrow.png") no-repeat;
   width: 53px;
   height: 89px;
+  display: none;
 }
 .flex-next {
   position: absolute;
@@ -118,6 +170,7 @@
   background: url("images/btn-arrow.png") no-repeat;
   width: 53px;
   height: 89px;
+  transform: rotate(180deg);
 }
 .timeline-wrapper {
   position: absolute;
@@ -125,6 +178,7 @@
   left: 50%;
   width: 422px;
   margin-left: -211px;
+  opacity: 0;
 }
 #timeline-bar {
   background: url("images/timeline-gray.png") no-repeat;
@@ -143,15 +197,19 @@
   display: flex;
   padding: 0px;
   position: absolute;
-  /*left: 42px;*/
+  left: 26px;
   bottom: 0;
-  padding-bottom: 14px;
+  padding-bottom: 16px;
   list-style-type: none;
-  width: 422px;
+  width: 410px;
   justify-content: space-between;
 }
+
 #timeline-years > li a {
+  font-size: 20px;
   text-decoration: none;
+  padding-bottom: 14px;
+  cursor: pointer;
 }
 
 
@@ -264,7 +322,7 @@
   position: fixed;
   top: 505px;
   transform: matrix(1, 0, 0.3, 1, 200, 0);
-  opacity: 0;
+  display: none;
 }
 
 
@@ -321,12 +379,12 @@
 
 
 /*=========================section car-details=====================*/
-
+/*
 .car-details {
   position: absolute;
   width: 100%;
   top: 12500px;
-  /*height: 100vh;*/
+  height: 100vh;
 }
 
 .slides2 {
@@ -337,9 +395,15 @@
   width: 100%;
   float: left;
   height: 100vh;
-  /*margin-top: 68px;*/
-  /*height: calc(100% - 68px);*/
+
 }
 .slides2 > li > img {
 
+}*/
+.triangle {
+  position: absolute;
+  top: auto;
+  left: 0;
+  width: 100%;
+  opacity: 1 !important;
 }

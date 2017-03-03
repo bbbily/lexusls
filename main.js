@@ -1,5 +1,150 @@
 $(document).ready(function() {
 
+  $(".home").find("img").on("click", function() {
+    $("body").animate({scrollTop: 720}, 1000);
+  })
+
+
+
+///////////////section journey ///////////////////////
+
+
+///////////slides1 imgage animation///////////////////
+  var transValue = 0;
+
+  $(".flex-next").on("click", function() {
+    $(".tire").slideUp(500, function() {})
+    $(".shadow").hide();
+    $(".flex-prev").show();
+
+    if (transValue == -4800)
+      $("body").animate({scrollTop: 1440}, 1000);
+    else {
+    transValue -= 800;
+      $(".slides").css({
+        "transform": "translateX(" + transValue + "px)",
+        "transition": "0.6s"
+      })
+    }
+
+    $("#timeline-bar-current").css({
+      "width": 68 * transValue / (-800) + 14 + "px"
+    })
+
+    // $(".slides").find("img:eq(" + (transValue/800 * (-1) - 1) + ")").css({
+    //   "top": "80px",
+    //   "right": "-616px",
+    //   "opacity": "0",
+    //   "transition": "0s"
+    // })
+    $(".slides img").css({
+      "top": "80px",
+      "right": "-616px",
+      "opacity": "0",
+      "transition": "0s"
+    })
+
+    setTimeout(function() {
+      $(".slides").find("img:eq(" + (transValue/800 * (-1) - 1) + ")").css({
+        "top": "140px",
+        "right": "0",
+        "opacity": "1",
+        "transition": "1s"
+      })
+    }, 500)
+  })
+
+
+  $(".flex-prev").on("click", function() {
+    if (transValue == -800) {
+      $(".tire").slideDown(500, function() {
+      })
+      $(".shadow").show();
+      $(this).hide();
+    }
+
+    transValue += 800;
+    $(".slides").css({
+      "transform": "translateX(" + transValue + "px)",
+      "transition": "0.6s"
+    })
+
+    if (transValue != 0)
+      $("#timeline-bar-current").css({
+          "width": 68 * transValue / (-800) + 14 + "px"
+      })
+    else
+      $("#timeline-bar-current").css({
+          "width": "41px"
+      })
+    $(".slides img").css({
+      "top": "80px",
+      "right": "-616px",
+      "opacity": "0",
+      "transition": "0s"
+    })
+    // $(".slides").find("img:eq(" + (transValue/800 * (-1) - 1) + ")").css({
+    //   "top": "80px",
+    //   "right": "-616px",
+    //   "opacity": "0",
+    //   "transition": "0s"
+    // })
+
+    setTimeout(function() {
+      $(".slides").find("img:eq(" + (transValue/800 * (-1) - 1) + ")").css({
+        "top": "140px",
+        "right": "0",
+        "opacity": "1",
+        "transition": "1s"
+      })
+    }, 500)
+  })
+
+
+
+////////////////timeline controll////////////////////
+  $(".y").on("click", function() {
+    transValue = ($(".y").index(this)+1) * (-800);
+    $("#timeline-bar-current").css({
+      "width": 68 * ($(".y").index(this)+1) + 14 + "px"
+    })
+
+    $(".tire").slideUp(500, function() {})
+    $(".shadow").hide();
+    $(".flex-prev").show();
+
+    $(".slides").css({
+      "transform": "translateX(" + transValue + "px)",
+      "transition": "0.6s"
+    })
+    $(".slides img").css({
+      "top": "80px",
+      "right": "-616px",
+      "opacity": "0",
+      "transition": "0s"
+    })
+    // $(".slides").find("img:eq(" + $(".y").index(this) + ")").css({
+    //   "top": "80px",
+    //   "right": "-616px",
+    //   "opacity": "0",
+    //   "transition": "0s"
+    // })
+
+    setTimeout(function() {
+      $(".slides").find("img:eq(" + (transValue/800 * (-1) - 1) + ")").css({
+        "top": "140px",
+        "right": "0",
+        "opacity": "1",
+        "transition": "1s"
+      })
+    }, 500)
+  })
+
+  $(window).scroll(function() {
+    window.requestAnimationFrame(parallax);
+
+  })
+
 
   function parallax() {
     var wScroll = $(this).scrollTop();
@@ -9,14 +154,39 @@ $(document).ready(function() {
 
     ////////////tire ////////////////
     // tire animation home top value 0, journey top value 720
-    if (wScroll > $(".home").offset().top + 350 && wScroll < $(".journey").offset().top) {
+    if (wScroll >= $(".home").offset().top + 350 && wScroll <= $(".journey").offset().top) {
       $(".tire").css({
         "animation-name": "roll"
       })
       $(".shadow").css({
         "animation-name": "shadowMove"
       })
+
+      $(".timeline-wrapper").css({
+        "opacity": (wScroll - 350) / 370 + ""
+      })
+      $(".flexslider1").css({
+        "opacity": (wScroll - 350) / 370 + "",
+        "top": 640 - (wScroll - 350) / 370 * 640 + 100 + "px"
+      })
     }
+
+    if (wScroll < 350) {
+      $(".flexslider1").css({
+        "opacity": "0"
+      })
+    }
+    if (wScroll > $(".journey").offset().top) {
+      $(".flexslider1").css({
+        "opacity": "1",
+        "top": "100px"
+      })
+      $(".timeline-wrapper").css({
+        "opacity": "1",
+        "top": "640px"
+      })
+    }
+
     if (wScroll > 1440 || wScroll == 0) {
       $(".tire").css({
         "animation-name": "none"
@@ -88,20 +258,20 @@ $(document).ready(function() {
       })
     }
     /////////dna cells visible and invisible
-    if (wScroll >= 4160 && wScroll <= 7000) {
+    if (wScroll >= 3742 && wScroll <= 7000) {
       $("#thumbnail1").css({
-        "opacity": 1
+        "display": "block"
       })
       $("#thumbnail1-shadow").css({
-        "opacity": 1
+        "display": "block"
       })
     }
     if (wScroll < 3742 || wScroll > 7000) {
       $("#thumbnail1").css({
-        "opacity": 0
+        "display": "none"
       })
       $("#thumbnail1-shadow").css({
-        "opacity": 0
+        "display": "none"
       })
     }
     //dna cells move animation, thumbnail1top value 4160
@@ -116,7 +286,8 @@ $(document).ready(function() {
       })
       $(".dna-thumbnail2").css({
         "position": "absolute",
-        "top": "5164px"
+        "top": "5164px",
+
       })
     }
     //dna cells stop moving, thumbnail2top value 5164
@@ -158,20 +329,20 @@ $(document).ready(function() {
       })
     }
     //cells visible and invisible
-    if (wScroll > 7000 && wScroll <= 9700) {
+    if (wScroll >= 6660 && wScroll <= 9700) {
       $("#thumbnail2").css({
-        "opacity": 1
+        "display": "block"
       })
       $("#thumbnail2-shadow").css({
-        "opacity": 1
+        "display": "block"
       })
     }
     if (wScroll < 6660 || wScroll > 9700) {
       $("#thumbnail2").css({
-        "opacity": 0
+        "display": "none"
       })
       $("#thumbnail2-shadow").css({
-        "opacity": 0
+        "display": "none"
       })
     }
     //dna cells move animation, thumbnail2top value 7000
@@ -264,25 +435,4 @@ $(document).ready(function() {
     if (wScroll > 13000) {
     }
   }
-  $(window).scroll(function() {
-    window.requestAnimationFrame(parallax);
-
-  })
-  var transValue = 0;
-  $(".flex-next").on("click", function() {
-    transValue -= 800;
-    $(".slides").css({
-      "transform": "translateX(" + transValue + "px)",
-      "transition": "0.6s"
-    })
-  })
-  $(".flex-prev").on("click", function() {
-    transValue += 800;
-    $(".slides").css({
-      "transform": "translateX(" + transValue + "px)",
-      "transition": "0.6s"
-    })
-
-  })
-
 })
