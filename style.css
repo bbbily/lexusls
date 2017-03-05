@@ -1,13 +1,201 @@
-/*body > nav > ul {
-  display: flex;
-  padding: 0px;
-}*/
 body {
   font-family: 'Open Sans', sans-serif;
 }
 h1 {
   font-size: 48px;
 }
+
+.nav {
+  background: url("images/nav-bg.jpg") repeat 0 0;
+  width: 100%;
+  height: 77px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  z-index: 1000;
+  justify-content: space-around;
+}
+.nav > ul {
+  display: flex;
+  padding: 0px;
+  justify-content: space-between;
+  text-align: center;
+}
+.nav > ul > li {
+  background: url("images/nav-line.gif") no-repeat right;
+  width: 110px;
+  align-self: center;
+}
+.nav > ul > li.last {
+  background: none;
+}
+.nav > ul > li > a {
+  text-decoration: none;
+  font-size: 16px;
+  color: black;
+  text-transform: capitalize;
+}
+
+
+/*==================================fancy-box==========================*/
+/*.fancybox-overlay {
+  position: fixed;
+  height: auto;
+  width: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: 1s;
+}*/
+.fancybox-wrap {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 860px;
+  height: 500px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0,.6);
+  opacity: 0;
+  transition: 1s;
+  z-index: -2;
+}
+.fancybox-wrap2 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 860px;
+  height: 500px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0,.6);
+  opacity: 0;
+  transition: 1s;
+  z-index: -2;
+}
+/*.fancybox-skin {
+  position: relative;
+  padding: 20px;
+  background-color: rgba(0, 0, 0,.6);
+  width: auto;
+  height: auto;
+}*/
+.fancybox-outer {
+  position: relative;
+  height: auto;
+  width: 860px;
+}
+.fancybox-inner {
+  position: absolute;
+  height: auto;
+  width: 860px;
+}
+.features img {
+  width: 860px;
+  height: auto;
+}
+.fancy-box-nav {
+  display: inline-block;
+  width: 30%;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.fancy-box-prev, .fancy-box-prev2 {
+  left: 0;
+}
+.fancy-box-next, .fancy-box-next2 {
+  right: 0;
+}
+.fancy-box-prev span, .fancy-box-prev2 span {
+  background: url("images/btn-lightbox-prev.png") no-repeat;
+  position: absolute;
+  display: inline-block;
+  top: 200px;
+  height: 75px;
+  width: 47px;
+  left: 6px;
+}
+.fancy-box-prev span:hover, .fancy-box-prev2 span:hover {
+  background: url("images/btn-lightbox-prev.png") no-repeat top right;
+}
+.fancy-box-next span, .fancy-box-next2 span {
+  background: url("images/btn-lightbox-prev.png") no-repeat;
+  position: absolute;
+  display: inline-block;
+  top: 200px;
+  transform: rotate(180deg);
+  height: 75px;
+  width: 47px;
+  right: 6px;
+}
+.fancy-box-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.fancybox-opened {
+  opacity: 1;
+  transition: 0.5s;
+  /*z-index: 200;*/
+  animation-name: none;
+}
+.fancybox-closed {
+  opacity: 0;
+  transition: 0.5s;
+  animation-name: none;
+  /*z-index: -2;*/
+}
+.caption {
+  background-color: black;
+  padding: 15px;
+  margin-top: -5px;
+}
+.caption h4 {
+  font-size: 25px;
+  color: white;
+  padding: 5px;
+}
+.caption p {
+  color: white;
+  font-size: 15px;
+  font-weight: 10;
+  padding: 5px;
+}
+
+@@keyframes leftToZero {
+  from {transform: translate(0); opacity: 1}
+  to {transform: translate(100px); opacity: 0}
+}
+@@keyframes rightToZero {
+  from {transform: translate(0); opacity: 1}
+  to {transform: translate(-100px); opacity: 0}
+}
+@@keyframes leftToOne {
+  from {transform: translate(-100px); opacity: 0}
+  to {transform: translate(0); opacity: 1}
+}
+@@keyframes rightToOne {
+  from {transform: translate(100px); opacity: 0}
+  to {transform: translate(0); opacity: 1}
+}
+/*.fancybox-pic-hidden {
+  display: none;
+}*/
+
 /*===========================section home========================*/
 #scroll-body {
   height: 20000px;
@@ -114,13 +302,13 @@ h3{
   position: absolute;
   top: 50%;
   font-size: 20px;
-  line-height: 1.5em;
+  line-height: 1em;
 }
 .slides li.first #p2 {
   position: absolute;
   top: 65%;
   font-size: 20px;
-  line-height: 1.5em;
+  line-height: 1em;
 }
 .slides li p {
   font-size: 18px;
@@ -134,6 +322,33 @@ h3{
   top: -20px;
   left: 0px;
   letter-spacing: -10px;
+}
+.video-shadow {
+  background: url("images/sec-02-vid-shadow.png") no-repeat top center;
+  height: 27px;
+  width: 498px;
+  position: absolute;
+  top: 238px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+.vid {
+  background: url("images/sec-02-vid.jpg") no-repeat top center;
+  height: 230px;
+  width: 419px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0px;
+  margin: auto;
+  cursor: pointer;
+}
+.vid:hover {
+  background: url("images/sec-02-vid.jpg") no-repeat bottom center;
 }
 .slides li img {
   position: absolute;
@@ -220,7 +435,7 @@ h3{
   background: black;
   position: relative;
   width: 100%;
-  height: calc(100vh + 68px);
+  height: calc(100vh + 10px);
   overflow: hidden;
 }
 .dna img {
@@ -235,9 +450,9 @@ h3{
 .dna-mini {
   background: url("images/sec-03-dna-mini.png") no-repeat left top;
   position: absolute;
-  left: 0;
+  left: 60px;
   top: 320px;
-  width: 150px;
+  width: 109px;
   height: 0px;
 }
 .bg-radial {
@@ -247,8 +462,9 @@ h3{
   height: 100%;
 }
 
-.active * {
-  opacity: 0;
+.active {
+  width: 100%;
+  height: 100%;
 }
 .active h1 {
   font-size: 48px;
@@ -261,15 +477,16 @@ h3{
 
 .firsth1 {
   position: absolute;
-  top: 150px;
-  left: 250px;
-  width: 600px;
+  top: 400px;
+  left: 60px;
+  width: 800px;
+  opacity: 0;
 }
-.secondh1 {
+h1.secondh1 {
   position: absolute;
   top: 250px;
-  left: 300px;
-  width: 600px;
+  left: 1800px;
+  width: 400px;
 }
 .firstp {
   position: absolute;
@@ -306,43 +523,92 @@ h3{
   position: absolute;
   top: 4160px;
   width: 100%;
-  height: 836px;
+  height: 918px;
   /*z-index: -1;*/
+}
+
+.dna-thumbnail1 h1 {
+  position: absolute;
+  top: 400px;
+  left: 60px;
+  opacity: 0;
+}
+.thumb1p1 {
+  position: absolute;
+  top: 500px;
+  left: 60px;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+.thumb1p2 {
+  position: absolute;
+  top: 600px;
+  left: 60px;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 1.5em;
 }
 .dna-thumbnail2 {
   background: url("images/sec-03c-bg.jpg") no-repeat right;
   background-size: cover;
   position: absolute;
   top: 5164px;
-  height: 836px;
+  height: 100vh;
   width: 100%;
   overflow-x: hidden;
+}
+.dna-thumbnail2 h1 {
+  position: absolute;
+  top: 800px;
+  left: 60px;
+}
+.thumb2p1 {
+  position: absolute;
+  top: 400px;
+  left: 60px;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+.thumb2p2 {
+  position: absolute;
+  top: 500px;
+  left: 60px;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 1.5em;
 }
 #thumbnail1, #thumbnail1-shadow, #thumbnail2, #thumbnail2-shadow {
   position: fixed;
   top: 505px;
   transform: matrix(1, 0, 0.3, 1, 200, 0);
   display: none;
+  z-index: 100;
 }
 
+.fancybox-control {
+  cursor: pointer;
+}
 
 /*================================section technologies=======================*/
 
 .technologies {
-  background: url("images/sec-03d-bg.jpg") no-repeat center;
+  background: url("images/sec-03d-bg.jpg") no-repeat;
   background-size: cover;
   position: absolute;
   top: 7000px;
   height: 100%;
   width: 100%;
+  /*display: block;*/
 }
 
 .smoothness {
   background: url("images/sec-03e-bg.jpg") no-repeat bottom;
   background-size: cover;
   position: absolute;
-  top: 7682px;
-  height: 918px;
+  top: 7900px;
+  height: 100vh;
   width: 100%;
   /*overflow-x: hidden;*/
 }

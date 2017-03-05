@@ -10,23 +10,14 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
 </head>
 <body>
-  <!-- <nav>
-    <ul>
-      <li><a href="home">home</a></li>
-      <li><a href="journey">journey</a></li>
-      <li><a href="dna">LS DNA</a></li>
-      <li><a href="ls">2013 LS</a></li>
-      <li><a href="gallery">gallery</a></li>
-      <li><a href="register">register</a></li>
-    </ul>
-  </nav> -->
+
   <div id="scroll-body">
-    <section class="home">
+    <section class="home" name="home">
       <h1>The new Lexus LS.</h1>
       <h3>Because others need something to aspire to.</h3>
       <img src="images/sec-01-arrow.gif" alt="arrow">
     </section>
-    <section class="journey">
+    <section class="journey" name="journey">
       <img src="images/sec-01-bottom.png" alt="triangle" class="triangle">
       <div class="journey-container">
         <img src="images/sec-02-tire.png" alt="tire" class="tire">
@@ -80,6 +71,8 @@
               </li>
               <li class="seventh">
                 <h1 class="year">2013</h1>
+                <span class="video-shadow"></span>
+                <a class="vid"></a>
                 <h3>The new LS</h3>
                 <p>Combining absolute opulence and industry-leading technology, the Lexus flagship sedan </p>
                 <p>takes a bold step forward.</p>
@@ -128,16 +121,42 @@
       </div>
     </section>
     <section class="dna-thumbnail1">
+      <h1>Unparalleled quality</h1>
+      <p class="thumb1p1">Through the years, Lexus has been committed
+      <br>to constant improvements.</p>
+      <p class="thumb1p2">The LS leads this pursuit of excellence and continues
+      <br>to achieve the highest levels of quality in every car.</p>
+
     </section>
     <section class="dna-thumbnail2">
       <img src="images/sec-03-dna-thumbs-01-shadow.png" alt="thumbnail" id="thumbnail1-shadow">
-      <img src="images/sec-03-dna-thumbs-01.png" alt="thumbnail" id="thumbnail1">
+      <img src="images/sec-03-dna-thumbs-01.png" alt="thumbnail" id="thumbnail1" usemap="#mapDNA1">
+      <map name="mapDNA1" id="mapDNA1">
+        <area href="#" shape="poly" coords="114,30,34,75,34,170,114,216,194,170,194,75" class="tooltip fancybox-control">
+        <area href="#" shape="poly" coords="277,30,197,75,197,170,277,216,357,170,357,75" class="tooltip fancybox-control">
+        <area href="#" shape="poly" coords="358,172,278,217,278,312,358,358,438,312,438,217" class="tooltip fancybox-control">
+        <area href="#" shape="poly" coords="604,31,524,76,524,171,604,217,684,171,684,76" class="tooltip fancybox-control">
+        <area href="#" shape="poly" coords="846,650,766,695,766,790,846,836,926,790,926,695" class="tooltip fancybox-control">
+        <area href="#" shape="poly" coords="764,793,684,838,684,933,764,979,844,933,844,838" class="tooltip fancybox-control">
+        <area href="#" shape="poly" coords="517,936,437,981,437,1076,517,1122,597,1076,597,981" class="tooltip fancybox-control">
+      </map>
+      <h1>Unrivaled cabin quietness</h1>
+      <p class="thumb2p1">The world’s quietest car is even quieter now.</p>
+      <p class="thumb2p2">By eliminating every possible source of noise, cabin
+      <br>quietness is enhanced for the finest in-car experience.</p>
     </section>
     <section class="technologies">
     </section>
     <section class="smoothness">
       <img src="images/sec-03-dna-thumbs-02-shadow.png" alt="thumbnail" id="thumbnail2-shadow">
-      <img src="images/sec-03-dna-thumbs-02.png" alt="thumbnail" id="thumbnail2">
+      <img src="images/sec-03-dna-thumbs-02.png" alt="thumbnail" id="thumbnail2" usemap="#mapDNA2">
+      <map name="mapDNA2" id="DNA2">
+        <area shape="poly" coords="340,30,260,75,260,170,340,216,420,170,420,75" href="#" class="tooltip fancybox-control2">
+        <area shape="poly" coords="589,172,509,217,509,312,589,358,669,312,669,217" href="#" class="tooltip fancybox-control2">
+        <area shape="poly" coords="917,536,837,581,837,676,917,722,997,676,997,581" href="#" class="tooltip fancybox-control2">
+        <area shape="poly" coords="837,679,757,724,757,819,837,865,917,819,917,724" href="#" class="tooltip fancybox-control2">
+        <area shape="poly" coords="592,821,512,866,512,961,592,1007,672,961,672,866" href="#" class="tooltip fancybox-control2">
+      </map>
     </section>
     <section class="car-sequence">
       <div class="car-pics">
@@ -177,6 +196,258 @@
       </div>
     </section> -->
   </div>
+  <div class="fancybox-overlay">
+    <!-- <div class="fancybox-wrap fancybox-default fancybox-closed">
+        <div class="fancybox-outer">
+          <div class="fancybox-inner">
+            <div class="features">
+              <img src="images/01 (1).jpg" alt="01" class="fancybox-pic-hidden">
+              <img src="images/02 (1).jpg" alt="02" class="fancybox-pic-hidden">
+              <img src="images/03 (1).jpg" alt="03" class="fancybox-pic-hidden">
+              <img src="images/04 (1).jpg" alt="04" class="fancybox-pic-hidden">
+              <img src="images/05 (1).jpg" alt="05" class="fancybox-pic-hidden">
+              <img src="images/06 (1).jpg" alt="06" class="fancybox-pic-hidden">
+              <img src="images/07 (1).jpg" alt="07" class="fancybox-pic-hidden">
+            </div>
+          </div>
+          <a class="fancy-box-prev fancy-box-nav"><span></span></a>
+          <a class="fancy-box-next fancy-box-nav"><span></span></a>
+          <a class="fancy-box-close">CLOSE X</a>
+        </div>
+    </div> -->
+    <div class="fancybox-wrap fancybox-closed">
+      <div class="fancybox-skin">
+        <div class="fancybox-outer">
+          <div class="fancybox-inner">
+            <div class="features">
+              <img src="images/01 (1).jpg" alt="01">
+              <div class="caption">
+                <h4>Fine artistry in the little details</h4>
+                <p>The new Shimamoku steering wheel is meticulously made with layers of wood veneer. It reflects the finest craftsmanship.</p>
+              </div>
+            </div>
+          </div>
+          <a class="fancy-box-prev fancy-box-nav"><span></span></a>
+          <a class="fancy-box-next fancy-box-nav"><span></span></a>
+          <a class="fancy-box-close">CLOSE X</a>
+        </div>
+      </div>
+    </div>
+    <div class="fancybox-wrap fancybox-closed">
+      <div class="fancybox-skin">
+        <div class="fancybox-outer">
+          <div class="fancybox-inner">
+            <div class="features">
+              <img src="images/02 (1).jpg" alt="02">
+              <div class="caption">
+                <h4>Thoughtful illumination</h4>
+                <p>The world’s first advanced illumination system adds a subtle glow to the exquisitely crafted interior.</p>
+              </div>
+            </div>
+          </div>
+          <a class="fancy-box-prev"><span></span></a>
+          <a class="fancy-box-next"><span></span></a>
+          <a class="fancy-box-close">CLOSE X</a>
+        </div>
+      </div>
+    </div>
+    <div class="fancybox-wrap fancybox-closed">
+      <div class="fancybox-skin">
+        <div class="fancybox-outer">
+          <div class="fancybox-inner">
+            <div class="features">
+              <img src="images/03 (1).jpg" alt="03">
+              <div class="caption">
+                <h4>A bold expressive front</h4>
+                <p>Stylish and iconic, the spindle grille represents a new phase of progressive styling.</p>
+              </div>
+            </div>
+          </div>
+          <a class="fancy-box-prev"><span></span></a>
+          <a class="fancy-box-next"><span></span></a>
+          <a class="fancy-box-close">CLOSE X</a>
+        </div>
+      </div>
+    </div>
+    <div class="fancybox-wrap fancybox-closed">
+      <div class="fancybox-skin">
+        <div class="fancybox-outer">
+          <div class="fancybox-inner">
+            <div class="features">
+              <img src="images/04 (1).jpg" alt="04">
+              <div class="caption">
+                <h4>Quiet confidence on the road</h4>
+                <p>On the LS F SPORT, 19-inch forged alloy wheels are paired with distinctive Brembo</p>
+              </div>
+            </div>
+          </div>
+          <a class="fancy-box-prev"><span></span></a>
+          <a class="fancy-box-next"><span></span></a>
+          <a class="fancy-box-close">CLOSE X</a>
+        </div>
+      </div>
+    </div>
+    <div class="fancybox-wrap fancybox-closed">
+      <div class="fancybox-skin">
+        <div class="fancybox-outer">
+          <div class="fancybox-inner">
+            <div class="features">
+              <img src="images/05 (1).jpg" alt="05">
+              <div class="caption">
+                <h4>Noise reduction wheels </h4>
+                <p>The new noise reduction wheels feature a sound-diffusing chamber in the rim to eliminate road noise.</p>
+              </div>
+            </div>
+          </div>
+          <a class="fancy-box-prev"><span></span></a>
+          <a class="fancy-box-next"><span></span></a>
+          <a class="fancy-box-close">CLOSE X</a>
+        </div>
+      </div>
+    </div>
+    <div class="fancybox-wrap fancybox-closed">
+      <div class="fancybox-skin">
+        <div class="fancybox-outer">
+          <div class="fancybox-inner">
+            <div class="features">
+              <img src="images/06 (1).jpg" alt="06">
+              <div class="caption">
+                <h4>Muting every sound</h4>
+                <p>Insulation was incorporated to several parts of the car to ensure that only pleasing sounds enter the cabin.</p>
+              </div>
+            </div>
+          </div>
+          <a class="fancy-box-prev"><span></span></a>
+          <a class="fancy-box-next"><span></span></a>
+          <a class="fancy-box-close">CLOSE X</a>
+        </div>
+      </div>
+    </div>
+    <div class="fancybox-wrap fancybox-closed">
+      <div class="fancybox-skin">
+        <div class="fancybox-outer">
+          <div class="fancybox-inner">
+            <div class="features">
+              <img src="images/07 (1).jpg" alt="07">
+              <div class="caption">
+                <h4>Crystal clear conversations</h4>
+                <p>Drive at 50km/h in the heart of town or 100km/h on the highway. No matter where, conversation clarity is at 100%.</p>
+              </div>
+            </div>
+          </div>
+          <a class="fancy-box-prev"><span></span></a>
+          <a class="fancy-box-next"><span></span></a>
+          <a class="fancy-box-close">CLOSE X</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="fancybox-overlay">
+    <div class="fancybox-wrap2 fancybox-closed">
+      <div class="fancybox-skin">
+        <div class="fancybox-outer">
+          <div class="fancybox-inner">
+            <div class="features">
+              <img src="images/08 (1).jpg" alt="01">
+              <div class="caption">
+                <h4>Fine artistry in the little details</h4>
+                <p>The new Shimamoku steering wheel is meticulously made with layers of wood veneer. It reflects the finest craftsmanship.</p>
+              </div>
+            </div>
+          </div>
+          <a class="fancy-box-prev2"><span></span></a>
+          <a class="fancy-box-next2"><span></span></a>
+          <a class="fancy-box-close">CLOSE X</a>
+        </div>
+      </div>
+    </div>
+    <div class="fancybox-wrap2 fancybox-closed">
+      <div class="fancybox-skin">
+        <div class="fancybox-outer">
+          <div class="fancybox-inner">
+            <div class="features">
+              <img src="images/09 (1).jpg" alt="02">
+              <div class="caption">
+                <h4>Thoughtful illumination</h4>
+                <p>The world’s first advanced illumination system adds a subtle glow to the exquisitely crafted interior.</p>
+              </div>
+            </div>
+          </div>
+          <a class="fancy-box-prev2"><span></span></a>
+          <a class="fancy-box-next2"><span></span></a>
+          <a class="fancy-box-close">CLOSE X</a>
+        </div>
+      </div>
+    </div>
+    <div class="fancybox-wrap2 fancybox-closed">
+      <div class="fancybox-skin">
+        <div class="fancybox-outer">
+          <div class="fancybox-inner">
+            <div class="features">
+              <img src="images/10 (1).jpg" alt="03">
+              <div class="caption">
+                <h4>A bold expressive front</h4>
+                <p>Stylish and iconic, the spindle grille represents a new phase of progressive styling.</p>
+              </div>
+            </div>
+          </div>
+          <a class="fancy-box-prev2"><span></span></a>
+          <a class="fancy-box-next2"><span></span></a>
+          <a class="fancy-box-close">CLOSE X</a>
+        </div>
+      </div>
+    </div>
+    <div class="fancybox-wrap2 fancybox-closed">
+      <div class="fancybox-skin">
+        <div class="fancybox-outer">
+          <div class="fancybox-inner">
+            <div class="features">
+              <img src="images/11 (1).jpg" alt="04">
+              <div class="caption">
+                <h4>Quiet confidence on the road</h4>
+                <p>On the LS F SPORT, 19-inch forged alloy wheels are paired with distinctive Brembo</p>
+              </div>
+            </div>
+          </div>
+          <a class="fancy-box-prev2"><span></span></a>
+          <a class="fancy-box-next2"><span></span></a>
+          <a class="fancy-box-close">CLOSE X</a>
+        </div>
+      </div>
+    </div>
+    <div class="fancybox-wrap2 fancybox-closed">
+      <div class="fancybox-skin">
+        <div class="fancybox-outer">
+          <div class="fancybox-inner">
+            <div class="features">
+              <img src="images/12 (1).jpg" alt="05">
+              <div class="caption">
+                <h4>Noise reduction wheels </h4>
+                <p>The new noise reduction wheels feature a sound-diffusing chamber in the rim to eliminate road noise.</p>
+              </div>
+            </div>
+          </div>
+          <a class="fancy-box-prev2"><span></span></a>
+          <a class="fancy-box-next2"><span></span></a>
+          <a class="fancy-box-close">CLOSE X</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="nav">
+    <img src="images/nav-logo.jpg" alt="logo">
+    <ul>
+      <li><a href="#home">home</a></li>
+      <li><a href="#journey">journey</a></li>
+      <li><a href="dna">LS DNA</a></li>
+      <li><a href="ls">2013 LS</a></li>
+      <li><a href="gallery">gallery</a></li>
+      <li class="last"><a href="register">register</a></li>
+    </ul>
+  </nav>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
   <script src="main.js"></script>
 </body>

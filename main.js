@@ -31,12 +31,6 @@ $(document).ready(function() {
       "width": 68 * transValue / (-800) + 14 + "px"
     })
 
-    // $(".slides").find("img:eq(" + (transValue/800 * (-1) - 1) + ")").css({
-    //   "top": "80px",
-    //   "right": "-616px",
-    //   "opacity": "0",
-    //   "transition": "0s"
-    // })
     $(".slides img").css({
       "top": "80px",
       "right": "-616px",
@@ -140,6 +134,120 @@ $(document).ready(function() {
     }, 500)
   })
 
+
+/////////////////fancybox animation ///////////////////////
+
+  var index = 0;
+
+  $(".fancy-box-prev").on("click", function() {
+    // $(".fancybox-closed").css({
+    //   "animation-name": "rightToZero"
+    // })
+    // $(".fancybox-opened").css({
+    //   "animation-name": "rightToOne"
+    // })
+    $(".fancybox-wrap:eq(" +index+ ")").removeClass("fancybox-opened").addClass("fancybox-closed");
+    $(".fancy-box-next").show();
+    index++;
+    if (index == 6) $(this).hide();
+    $(".fancybox-wrap:eq(" +index+ ")").removeClass("fancybox-closed").addClass("fancybox-opened");
+  })
+
+
+  $(".fancy-box-next").on("click", function() {
+
+    $(".fancybox-wrap:eq(" +index+ ")").removeClass("fancybox-opened").addClass("fancybox-closed");
+    $(".fancy-box-prev").show();
+    index--;
+    if (index == 0) $(".fancy-box-next").hide();
+    $(".fancybox-wrap:eq(" +index+ ")").removeClass("fancybox-closed").addClass("fancybox-opened");
+  })
+
+  $(".fancy-box-close").on("click", function() {
+    $(".fancybox-opened").removeClass("fancybox-opened").addClass("fancybox-closed");
+    $(".fancy-box-next").show();
+    $(".fancy-box-prev").show();
+    $(".fancybox-wrap").css({
+      "z-index": "-2"
+    })
+  })
+
+  $(".fancybox-control").on("click",function(e) {
+    e.preventDefault();
+    index = $(".fancybox-control").index(this);
+    $(".fancybox-wrap").css({
+      "z-index": "200"
+    })
+    if (index == 0) $(".fancy-box-next").hide();
+    if (index == 6) $(".fancy-box-prev").hide();
+    // $(".features img").addClass("fancybox-pic-hidden");
+    // $(".features img:eq(" +index +")").removeClass("fancybox-pic-hidden");
+    // $(".fancybox-default").removeClass("fancybox-closed").addClass("fancybox-opened");
+    $(".fancybox-wrap:eq(" +index+ ")").removeClass("fancybox-closed").addClass("fancybox-opened");
+  })
+
+
+
+
+
+/////////////////fancybox fancybox-wrap2 animation ///////////////////////
+
+  var index2 = 0;
+
+  $(".fancy-box-prev2").on("click", function() {
+    // $(".fancybox-closed").css({
+    //   "animation-name": "rightToZero"
+    // })
+    // $(".fancybox-opened").css({
+    //   "animation-name": "rightToOne"
+    // })
+    $(".fancybox-wrap2:eq(" +index2+ ")").removeClass("fancybox-opened").addClass("fancybox-closed");
+    $(".fancy-box-next2").show();
+    index2++;
+    if (index2 == 4) $(".fancy-box-prev2").hide();
+    $(".fancybox-wrap2:eq(" +index2+ ")").removeClass("fancybox-closed").addClass("fancybox-opened");
+  })
+
+
+  $(".fancy-box-next2").on("click", function() {
+
+    $(".fancybox-wrap2:eq(" +index2+ ")").removeClass("fancybox-opened").addClass("fancybox-closed");
+    $(".fancy-box-prev2").show();
+    index2--;
+    if (index2 == 0) $(".fancy-box-next2").hide();
+    $(".fancybox-wrap2:eq(" +index2+ ")").removeClass("fancybox-closed").addClass("fancybox-opened");
+  })
+
+  $(".fancy-box-close").on("click", function() {
+    $(".fancybox-opened").removeClass("fancybox-opened").addClass("fancybox-closed");
+    $(".fancy-box-next2").show();
+    $(".fancy-box-prev2").show();
+    $(".fancybox-wrap2").css({
+      "z-index": "-2"
+    })
+  })
+
+  $(".fancybox-control2").on("click",function(e) {
+    e.preventDefault();
+    index2 = $(".fancybox-control2").index(this);
+    $(".fancybox-wrap2").css({
+      "z-index": "200"
+    })
+    if (index2 == 0) $(".fancy-box-next2").hide();
+    if (index2 == 4) $(".fancy-box-prev2").hide();
+    // $(".features img").addClass("fancybox-pic-hidden");
+    // $(".features img:eq(" +index2 +")").removeClass("fancybox-pic-hidden");
+    // $(".fancybox-default").removeClass("fancybox-closed").addClass("fancybox-opened");
+    $(".fancybox-wrap2:eq(" +index2+ ")").removeClass("fancybox-closed").addClass("fancybox-opened");
+  })
+
+
+
+
+///////////////////scroll animation//////////////////////////
+
+
+
   $(window).scroll(function() {
     window.requestAnimationFrame(parallax);
 
@@ -153,7 +261,7 @@ $(document).ready(function() {
 
 
     ////////////tire ////////////////
-    // tire animation home top value 0, journey top value 720
+    // tire animation home top value 0, journey top value 797
     if (wScroll >= $(".home").offset().top + 350 && wScroll <= $(".journey").offset().top) {
       $(".tire").css({
         "animation-name": "roll"
@@ -203,30 +311,85 @@ $(document).ready(function() {
     var dnaTop = $(".dna").offset().top
     var thumbnail1Top = $(".dna-thumbnail1").offset().top
     // dna fixed animation
+
+    //set dna chain events, each event last 250
+    if (wScroll > 1190 && wScroll <= 1440) {
+      $(".firsth1").css({
+        "opacity": (wScroll - 1190)/250 + "",
+        "top": 400 - (wScroll - 1190)/250 * 280 + "px"
+      })
+      $("#mini2").css({
+        "opacity": (wScroll - 1190) / 250 + ""
+      })
+    }
     if (wScroll => 1440 && wScroll <= thumbnail1Top) {
       $(".dna").css({
         "position": "fixed",
-        "top": "-72px",
+        "top": "-10px",
         "left": "0"
       })
-      $(".active").css({
-        "position": "fixed"
-      })
+      // $(".active").css({
+      //   "position": "fixed"
+      // })
       $(".dna-mini").css({
         "opacity": "1",
         "height": (wScroll - 1440) * 0.3 + "px"
       })
-      // set 8 different events, each event last 250
+      // set 6 different events, each event last 250
       if (wScroll > 1440 && wScroll <= 1690) {
-        $(".firsth1").css({
-          "opacity": 0.5 / 250 * (wScroll - 1440) + "",
-          "left": 250 - (wScroll - 1440) + 42 + "px"
+        $(".secondh1").css({
+          "left": 300 - (wScroll - 1440) / 250 * 240 + "px",
+          "opacity": (wScroll - 1440) / 250 + ""
         })
-        $("#mini5").css({
+        $("#mini3").css({
           "opacity": (wScroll - 1440) / 250 + ""
         })
       }
+      if (wScroll > 1690 && wScroll <= 1940) {
+        $("#mini4").css({
+          "opacity": (wScroll - 1690) / 250 + ""
+        })
+      }
+      if (wScroll > 1940 && wScroll <= 2190) {
+
+        $("#mini5").css({
+          "opacity": (wScroll - 1940) / 250 + ""
+        })
+      }
+      if (wScroll > 2190 && wScroll <= 2440) {
+        $(".firsth1").css({
+          "opacity": 0.5 / 250 * (wScroll - 2190) + "",
+          "left": 250 - (wScroll - 2190) + 42 + "px"
+        })
+        $("#mini6").css({
+          "opacity": (wScroll - 2190) / 250 + ""
+        })
+      }
+      if (wScroll > 2440 && wScroll <= 2690) {
+        $(".firsth1").css({
+          "opacity": 0.5 / 250 * (wScroll - 2440) + "",
+          "left": 250 - (wScroll - 2440) + 42 + "px"
+        })
+        $("#mini7").css({
+          "opacity": (wScroll - 2440) / 250 + ""
+        })
+      }
+      if (wScroll > 2690 && wScroll <= 2940) {
+        $(".firsth1").css({
+          "opacity": 0.5 / 250 * (wScroll - 2690) + "",
+          "left": 250 - (wScroll - 2690) + 42 + "px"
+        })
+        $("#mini8").css({
+          "opacity": (wScroll - 2690) / 250 + ""
+        })
+      }
+
     }
+
+
+
+
+
     // 4160 at thumbnail1Top, set dna position back to absolute
     if (wScroll > thumbnail1Top || wScroll < 1440) {
       $(".active").css({
@@ -256,6 +419,18 @@ $(document).ready(function() {
         "top": "505px",
         "transform": "matrix(1, 0,"+(0.3-(wScroll-3742)/418*0.3)+",1,"+(200-(wScroll-3742)/418*200)+",0)"
       })
+      $(".dna-thumbnail1 h1").css({
+        "opacity": (wScroll - 3742) / 418,
+        "top": 400 - (wScroll - 3742) / 418 * 300 + "px"
+      })
+      $(".thumb1p1").css({
+        "opacity": (wScroll - 3742) / 418,
+        "top": 500 - (wScroll - 3742) / 418 * 300 + "px"
+      })
+      $(".thumb1p2").css({
+        "opacity": (wScroll - 3742) / 418,
+        "top": 600 - (wScroll - 3742) / 418 * 300 + "px"
+      })
     }
     /////////dna cells visible and invisible
     if (wScroll >= 3742 && wScroll <= 7000) {
@@ -278,16 +453,21 @@ $(document).ready(function() {
     if (wScroll >= 4160 && wScroll < 5164) {
       $("#thumbnail1").css({
         "transform": "matrix(1, "+(0-(wScroll-4160)/996*0.2) +","+(0-(wScroll-4160)/996*0.3)+",1,"+((wScroll-4160)/996*100)+",0)",
-        "top": (505 - wScroll + 4160) + "px"
+        "top": (505 - wScroll + 4160) + "px",
+        // "height": "1300px"
       })
       $("#thumbnail1-shadow").css({
         "transform": "matrix(1, "+(0-(wScroll-4160)/996*0.2) +","+(0-(wScroll-4160)/996*0.3)+",1,"+((wScroll-4160)/996*200)+",0)",
-        "top": (505 - wScroll + 4160) + "px"
+        "top": (505 - wScroll + 4160) + "px",
+        // "height": "1300px"
       })
       $(".dna-thumbnail2").css({
         "position": "absolute",
         "top": "5164px",
-
+        "height": "100vh"
+      })
+      $(".dna-thumbnail2 h1").css({
+        "top": 800 - (wScroll - 4160) / 996 * 650 + "px"
       })
     }
     //dna cells stop moving, thumbnail2top value 5164
@@ -295,7 +475,8 @@ $(document).ready(function() {
     if (wScroll >= 5164 && wScroll <= 7000) {
       $(".dna-thumbnail2").css({
         "position": "fixed",
-        "top": "0"
+        "top": "0",
+        "height": "100vh"
       })
       $("#thumbnail1").css({
         "transform": "matrix(1, "+((wScroll-5164)/1836*0.5-0.2) +","+((wScroll-5164)/1836*0.6-0.3)+",1,100,0)",
@@ -305,18 +486,27 @@ $(document).ready(function() {
         "transform": "matrix(1, "+((wScroll-5164)/1836*0.5-0.2) +","+((wScroll-5164)/1836*0.6-0.3)+",1,"+(200-(wScroll-5164)/1836*100)+",0)",
         "top": "-500px"
       })
+      $(".thumb2p1").css({
+        "opacity": (wScroll - 5164) / 1836,
+        "top": 400 - (wScroll - 5164) / 1836 * 180 + "px"
+      })
+      $(".thumb2p2").css({
+        "opacity": (wScroll - 5164) / 1836,
+        "top": 500 - (wScroll - 5164) / 1836 * 210 + "px"
+      })
     }
 
 
 
     ////////////////////////////technologies//////////////////////////////////
     // technologies value 7000 , smoothness value 8000
-    //top cells animation
+    //top cells2 animation
     if (wScroll >= 6660 && wScroll <= 7000) {
-      $(".dna-thumbnail2").css({
-        "position": "absolute",
-        "top": "5164px"
-      })
+      // $(".dna-thumbnail2").css({
+      //   "position": "absolute",
+      //   "top": "5164px",
+      //   "height": "836px"
+      // })
       $("#thumbnail2").css({
         "opacity": (wScroll - 6660) / 340,
         "top": "505px",
@@ -345,8 +535,8 @@ $(document).ready(function() {
         "display": "none"
       })
     }
-    //dna cells move animation, thumbnail2top value 7000
-    if (wScroll >= 7000 && wScroll < 7850) {
+    //dna cells2 move animation, thumbnail2top value 7000
+    if (wScroll > 7000 && wScroll < 7740) {
       $("#thumbnail2").css({
         "transform": "matrix(1, "+(0-(wScroll-7000)/1000*0.2) +","+(0-(wScroll-7000)/1000*0.3)+",1,"+((wScroll-7000)/1000*100)+",0)",
         "top": (505 - wScroll + 7000) + "px"
@@ -361,15 +551,17 @@ $(document).ready(function() {
       })
       $(".smoothness").css({
         "position": "absolute",
-        "top": "7682px"
+        "top": "7682px",
+        "height": "918px"
       })
     }
     //dna cells stop moving, thumbnail2top value 5164
     //change dna-thumbnail2 position
-    if (wScroll >= 7850 && wScroll <= 9700) {
+    if (wScroll >= 7740 && wScroll <= 9700) {
       $(".smoothness").css({
         "position": "fixed",
-        "top": "-168px"
+        "top": "-168px",
+        "height": "calc(100vh + 168px)"
       })
       $("#thumbnail2").css({
         "transform": "matrix(1, "+((wScroll-7850)/1850*0.5-0.2) +","+((wScroll-7850)/1850*0.6-0.3)+",1,100,0)",
@@ -395,7 +587,8 @@ $(document).ready(function() {
     if (wScroll > 9700 && wScroll <= 11700) {
       $(".smoothness").css({
         "position": "absolute",
-        "top": "7682px"
+        "top": "7682px",
+        "height": "918px"
       })
       $(".car-sequence").css({
         "position": "fixed",
@@ -435,4 +628,5 @@ $(document).ready(function() {
     if (wScroll > 13000) {
     }
   }
+
 })
