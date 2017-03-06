@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   $(".home").find("img").on("click", function() {
-    $("body").animate({scrollTop: 720}, 1000);
+    $("body").animate({scrollTop: $(".journey").offset().top}, 1000);
   })
 
 
@@ -242,7 +242,61 @@ $(document).ready(function() {
   })
 
 
+/////////////////////car-components animation////////////////////
 
+  var componentsIndex = 0;
+  var componentsTransValue = 0;
+
+  $(".components-control").on("click", function() {
+    componentsIndex = $(".components-control").index(this);
+
+    $(".components-opened").removeClass("components-opened").addClass("components-closed");
+    $(".car-components div:eq(" +componentsIndex+ ")").removeClass("components-closed").addClass("components-opened");
+
+  })
+
+  $(".flex-next2").on("click", function() {
+    $(".flex-prev2").css({
+      "display": "inline-block"
+    })
+
+    if (componentsTransValue == -1632) {
+      componentsTransValue = -1904;
+      $(this).hide();
+      // $(".slides2").css({
+      //   "transform": "translate(-1904px)"
+      // })
+    }
+    else {
+      componentsTransValue -= 816;
+    }
+    $(".slides2").css({
+      "transform": "translate(" + componentsTransValue + "px)"
+    })
+  })
+
+  $(".flex-prev2").on("click", function() {
+    $(".flex-next2").css({
+      "display": "inline-block"
+    })
+
+    if (componentsTransValue == -816) {
+      $(this).hide();
+      componentsTransValue += 816;
+      // $(".slides2").css({
+      //   "transform": "translate(-1904px)"
+      // })
+    }
+    else if (componentsTransValue == -1904) {
+      componentsTransValue = -1632;
+    }
+    else {
+      componentsTransValue += 816;
+    }
+    $(".slides2").css({
+      "transform": "translate(" + componentsTransValue + "px)"
+    })
+  })
 
 ///////////////////scroll animation//////////////////////////
 
@@ -262,7 +316,7 @@ $(document).ready(function() {
 
     ////////////tire ////////////////
     // tire animation home top value 0, journey top value 797
-    if (wScroll >= $(".home").offset().top + 350 && wScroll <= $(".journey").offset().top) {
+    if (wScroll >= $(".home").offset().top + 350 && wScroll <= $(".journey").offset().top - 100) {
       $(".tire").css({
         "animation-name": "roll"
       })
@@ -271,11 +325,12 @@ $(document).ready(function() {
       })
 
       $(".timeline-wrapper").css({
-        "opacity": (wScroll - 350) / 370 + ""
+        "opacity": (wScroll - 350) / 270 + "",
+        "top": 300 + (wScroll - 350) / 270 * 340 + "px"
       })
       $(".flexslider1").css({
-        "opacity": (wScroll - 350) / 370 + "",
-        "top": 640 - (wScroll - 350) / 370 * 640 + 100 + "px"
+        "opacity": (wScroll - 350) / 270 + "",
+        "top": 640 - (wScroll - 350) / 270 * 540 + "px"
       })
     }
 
@@ -284,7 +339,7 @@ $(document).ready(function() {
         "opacity": "0"
       })
     }
-    if (wScroll > $(".journey").offset().top) {
+    if (wScroll > $(".journey").offset().top - 100) {
       $(".flexslider1").css({
         "opacity": "1",
         "top": "100px"
@@ -314,10 +369,10 @@ $(document).ready(function() {
 
     //set dna chain events, each event last 250
     if (wScroll > 1190 && wScroll <= 1440) {
-      $(".firsth1").css({
-        "opacity": (wScroll - 1190)/250 + "",
-        "top": 400 - (wScroll - 1190)/250 * 280 + "px"
-      })
+      // $(".firsth1").css({
+      //   "opacity": (wScroll - 1190)/250 + "",
+      //   "top": 400 - (wScroll - 1190)/250 * 280 + "px"
+      // })
       $("#mini2").css({
         "opacity": (wScroll - 1190) / 250 + ""
       })
@@ -357,28 +412,17 @@ $(document).ready(function() {
         })
       }
       if (wScroll > 2190 && wScroll <= 2440) {
-        $(".firsth1").css({
-          "opacity": 0.5 / 250 * (wScroll - 2190) + "",
-          "left": 250 - (wScroll - 2190) + 42 + "px"
-        })
         $("#mini6").css({
           "opacity": (wScroll - 2190) / 250 + ""
         })
       }
       if (wScroll > 2440 && wScroll <= 2690) {
-        $(".firsth1").css({
-          "opacity": 0.5 / 250 * (wScroll - 2440) + "",
-          "left": 250 - (wScroll - 2440) + 42 + "px"
-        })
         $("#mini7").css({
           "opacity": (wScroll - 2440) / 250 + ""
         })
       }
       if (wScroll > 2690 && wScroll <= 2940) {
-        $(".firsth1").css({
-          "opacity": 0.5 / 250 * (wScroll - 2690) + "",
-          "left": 250 - (wScroll - 2690) + 42 + "px"
-        })
+
         $("#mini8").css({
           "opacity": (wScroll - 2690) / 250 + ""
         })
@@ -619,13 +663,85 @@ $(document).ready(function() {
 
 
     /////car-details top value 11700
-    if (wScroll > 11700 && wScroll <= 13000) {
+    if (wScroll > 11700 && wScroll <= 12500) {
       $(".car-sequence").css({
         "position": "absolute",
         "top": "11700px"
       })
+      $(".car-details").css({
+        "position": "absolute",
+        "top": "12500px"
+      })
+      $(".flexslider2").css({
+        "bottom": "-168px",
+        "opacity": "0"
+      })
     }
-    if (wScroll > 13000) {
+
+    ///////////////.felxslider2 fade out/////////////////
+    if (wScroll > 12500 && wScroll <= 13000) {
+      $(".car-details").css({
+        "position": "fixed",
+        "top": "-5px"
+      })
+      $(".flexslider2").css({
+        "bottom": (wScroll - 12500) / 500 * 168 - 168 + "px",
+        "opacity": (wScroll - 12500) / 500
+      })
+    }
+
+    if ( wScroll > 13000 && wScroll <= 14500) {
+      $(".car-details").css({
+        "position": "fixed",
+        "top": "-5px"
+      })
+      $(".registration").css({
+        "position": "absolute",
+        "top": "14500px"
+      })
+    }
+
+    /////////////////section registration///////////////////////
+
+    if (wScroll > 14500 && wScroll <= 15500) {
+      $(".flexslider2").css({
+        "opacity": "1",
+        "bottom": "0"
+      })
+      $(".car-details").css({
+        "position": "absolute",
+        "top": "12500px"
+      })
+      $(".registration").css({
+        "position": "fixed",
+        "top": "0"
+      })
+      $(".country").css({
+        "position": "absolute",
+        "top": "15500px"
+      })
+
+    }
+
+
+
+    //////////////////////section country ///////////////////////////
+    if (wScroll > 14500 && wScroll < $(".country").offset().top -333)
+      $(".cover").css({
+        "opacity": "0"
+      })
+
+    if (wScroll >= $(".country").offset().top -333 && wScroll < $(".country").offset().top) {
+      $(".cover").css({
+        "opacity": (wScroll - $(".country").offset().top + 333) / 333 * 0.7 + ""
+      })
+    }
+
+    if (wScroll >= $(".country").offset().top) {
+      $(".country").css({
+        "position": "fixed",
+        "top": "0"
+      })
     }
   }
 

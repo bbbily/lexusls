@@ -40,15 +40,9 @@ h1 {
 
 /*==================================fancy-box==========================*/
 /*.fancybox-overlay {
-  position: fixed;
   height: auto;
   width: auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0;
-  transition: 1s;
+  overflow: hidden;
 }*/
 .fancybox-wrap {
   position: fixed;
@@ -198,7 +192,7 @@ h1 {
 
 /*===========================section home========================*/
 #scroll-body {
-  height: 20000px;
+  height: 17000px;
 }
 .home {
   background: url("images/sec-01-bg.jpg") no-repeat center;
@@ -438,7 +432,7 @@ h3{
   height: calc(100vh + 10px);
   overflow: hidden;
 }
-.dna img {
+.dna > img {
   position: absolute;
   top: 0;
   right: 0;
@@ -463,8 +457,10 @@ h3{
 }
 
 .active {
+  position: absolute;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 .active h1 {
   font-size: 48px;
@@ -475,14 +471,14 @@ h3{
   color: white;
 }
 
-.firsth1 {
+.active.firsth1 {
   position: absolute;
   top: 400px;
   left: 60px;
   width: 800px;
-  opacity: 0;
+  opacity: 1;
 }
-h1.secondh1 {
+.active.secondh1 {
   position: absolute;
   top: 250px;
   left: 1800px;
@@ -645,31 +641,143 @@ h1.secondh1 {
 
 
 /*=========================section car-details=====================*/
-/*
+
 .car-details {
   position: absolute;
   width: 100%;
   top: 12500px;
-  height: 100vh;
+  height: calc(100vh + 5px);
 }
-
+.car-components > div {
+  position: absolute;
+  width: 100%;
+  height: calc(100vh + 5px);
+  overflow: hidden;
+}
+.car-components > div > img {
+  width: auto;
+  height: 100%;
+  min-height: 800px;
+}
+.flexslider2 {
+  background: rgba(0, 0, 0, .6);
+  position: absolute;
+  bottom: -168px;
+  width: 100%;
+  height: 168px;
+  opacity: 0;
+}
+.viewport2 {
+  width: 816px;
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+  padding-top: 0px;
+}
+.components-opened {
+  opacity: 1;
+  transition: 0.5s;
+  /*z-index: 200;*/
+}
+.components-closed {
+  opacity: 0;
+  transition: 0.5s;
+  /*z-index: -2;*/
+}
 .slides2 {
-  height: 800px;
+  width: 2000%;
   list-style-type: none;
+  display: flex;
+  transition: 0.6s;
 }
 .slides2 > li {
-  width: 100%;
-  float: left;
-  height: 100vh;
-
+  margin: 5px;
 }
-.slides2 > li > img {
+.slides2 > li > a {
+  background: url("images/gallery-thumb-frame.png") no-repeat left bottom;
+  height: 148px;
+  width: 126px;
+  display: block;
+  cursor: pointer;
+}
+.slides2 > li > a > img {
+  padding: 9px 0 0 6px;
+}
 
-}*/
+.flex-prev2 {
+  background: url("images/btn-arrow.png") no-repeat;
+  position: absolute;
+  top: 40px;
+  left: calc(50% - 500px);
+  width: 53px;
+  height: 89px;
+  display: none;
+  cursor: pointer;
+}
+.flex-next2 {
+  position: absolute;
+  top: 40px;
+  right: calc(50% - 500px);
+  background: url("images/btn-arrow.png") no-repeat;
+  width: 53px;
+  height: 89px;
+  transform: rotate(180deg);
+  display: inline-block;
+  cursor: pointer;
+}
+
+
+/*================================section registration===========================*/
+
+.registration {
+  position: absolute;
+  top: 14500px;
+  width: 100%;
+  height: 100%;
+}
+.registration-container {
+  background: url("images/sec-05-bg.jpg") no-repeat center bottom;
+  position: absolute;
+  top: 77px;
+  height: 100%;
+  width: 100%;
+  z-index: 11;
+}
+.cover {
+  background: black;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
 .triangle {
   position: absolute;
   top: auto;
   left: 0;
   width: 100%;
+  z-index: 10;
   opacity: 1 !important;
+}
+
+
+/*=================================section country=========================*/
+
+
+.country {
+  position: absolute;
+  top: 15500px;
+  width: 100%;
+  height: 100%;
+}
+.country-container > img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.info-country {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
