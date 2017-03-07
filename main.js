@@ -300,9 +300,35 @@ $(document).ready(function() {
 
 ///////////////////scroll animation//////////////////////////
 
+  var $window = $(window);
+  var scrollTime = 1.2;
+  var scrollDistance = 170;
 
+  $window.on("mousewheel DOMMouseScroll", function(event){
 
-  $(window).scroll(function() {
+    event.preventDefault();
+
+    var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
+    var scrollTop = $window.scrollTop();
+    var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+
+    TweenMax.to($window, scrollTime, {
+      scrollTo : { y: finalScroll, autoKill:true },
+        ease: Power1.easeOut,
+        overwrite: 5
+      });
+
+  });
+  // $window.on("beforeunload", function() {
+  //   $(".end").css({
+  //     "position": "fixed"
+  //   })
+  // })
+  $window.on("load", function() {
+    $("body").animate({scrollTop: $(this).scrollTop()+1});
+  })
+
+  $window.scroll(function() {
     window.requestAnimationFrame(parallax);
 
   })
@@ -368,13 +394,27 @@ $(document).ready(function() {
     // dna fixed animation
 
     //set dna chain events, each event last 250
+    if (wScroll <= 1190) {
+      $(".firsth1").css({
+        "opacity": "0"
+      })
+      $("#mini2").css({
+        "opacity": "0"
+      })
+    }
     if (wScroll > 1190 && wScroll <= 1440) {
-      // $(".firsth1").css({
-      //   "opacity": (wScroll - 1190)/250 + "",
-      //   "top": 400 - (wScroll - 1190)/250 * 280 + "px"
-      // })
+      $(".firsth1").css({
+        "opacity": (wScroll - 1190)/250 + "",
+        "top": 400 - (wScroll - 1190)/250 * 260 + "px"
+      })
       $("#mini2").css({
         "opacity": (wScroll - 1190) / 250 + ""
+      })
+      $(".secondh1").css({
+        "opacity": "0"
+      })
+      $("#mini3").css({
+        "opacity": "0"
       })
     }
     if (wScroll => 1440 && wScroll <= thumbnail1Top) {
@@ -393,38 +433,104 @@ $(document).ready(function() {
       // set 6 different events, each event last 250
       if (wScroll > 1440 && wScroll <= 1690) {
         $(".secondh1").css({
-          "left": 300 - (wScroll - 1440) / 250 * 240 + "px",
-          "opacity": (wScroll - 1440) / 250 + ""
+          "left": 450 - (wScroll - 1440) / 250 * 300 + "px",
+          "opacity": (wScroll - 1440) / 250 * 0.7 + ""
         })
         $("#mini3").css({
           "opacity": (wScroll - 1440) / 250 + ""
         })
+        $(".firstp").css({
+          "opacity": "0"
+        })
+        $("#mini4").css({
+          "opacity": "0"
+        })
       }
       if (wScroll > 1690 && wScroll <= 1940) {
+        $(".secondh1").css({
+          "left": 150 - (wScroll - 1690) / 250 * 120 + "px",
+          "opacity": (wScroll - 1690) / 250 * 0.3 + 0.7 + ""
+        })
+        $(".firstp").css({
+          "left": 500 - (wScroll - 1690) / 250 * 300 + "px",
+          "opacity": (wScroll - 1690) / 250 * 0.7 + ""
+        })
         $("#mini4").css({
           "opacity": (wScroll - 1690) / 250 + ""
         })
+        $(".secondp").css({
+          "opacity": "0"
+        })
+        $("#mini5").css({
+          "opacity": "0"
+        })
       }
       if (wScroll > 1940 && wScroll <= 2190) {
-
+        $(".firstp").css({
+          "left": 200 - (wScroll - 1940) / 250 * 100 + "px",
+          "opacity": (wScroll - 1940) / 250 * 0.3 + 0.7 + ""
+        })
+        $(".secondp").css({
+          "left": 550 - (wScroll - 1940) / 250 * 300 + "px",
+          "opacity": (wScroll - 1940) / 250 * 0.7 + ""
+        })
         $("#mini5").css({
           "opacity": (wScroll - 1940) / 250 + ""
         })
+        $(".thirdp").css({
+          "opacity": "0"
+        })
+        $("#mini6").css({
+          "opacity": "0"
+        })
       }
       if (wScroll > 2190 && wScroll <= 2440) {
+        $(".secondp").css({
+          "left": 250 - (wScroll - 2190) / 250 * 100 + "px",
+          "opacity": (wScroll - 2190) / 250 * 0.3 + 0.7 + ""
+        })
+        $(".thirdp").css({
+          "left": 550 - (wScroll - 2190) / 250 * 300 + "px",
+          "opacity": (wScroll - 2190) / 250 * 0.7 + ""
+        })
+        $(".forthp").css({
+          "opacity": "0"
+        })
+        $("#mini7").css({
+          "opacity": "0"
+        })
         $("#mini6").css({
           "opacity": (wScroll - 2190) / 250 + ""
         })
       }
       if (wScroll > 2440 && wScroll <= 2690) {
+        $(".thirdp").css({
+          "left": 250 - (wScroll - 2440) / 250 * 110 + "px",
+          "opacity": (wScroll - 2440) / 250 * 0.3 + 0.7 + ""
+        })
+        $(".forthp").css({
+          "left": 500 - (wScroll - 2440) / 250 * 300 + "px",
+          "opacity": (wScroll - 2440) / 250 * 0.7 + ""
+        })
+        $("#mini8").css({
+          "opacity": "0"
+        })
         $("#mini7").css({
           "opacity": (wScroll - 2440) / 250 + ""
         })
       }
       if (wScroll > 2690 && wScroll <= 2940) {
-
+        $(".forthp").css({
+          "left": 200 - (wScroll - 2690) / 250 * 90 + "px",
+          "opacity": (wScroll - 2690) / 250 * 0.3 + 0.7 + ""
+        })
         $("#mini8").css({
           "opacity": (wScroll - 2690) / 250 + ""
+        })
+      }
+      if (wScroll > 2940) {
+        $("#mini8").css({
+          "opacity": "1"
         })
       }
 
@@ -439,9 +545,7 @@ $(document).ready(function() {
       $(".active").css({
         "position": "absolute",
       })
-      $(".active").find("*").css({
-        "opacity": "0"
-      })
+
       $(".dna").css({
         "position": "absolute",
         "top": "1440px"
@@ -465,15 +569,15 @@ $(document).ready(function() {
       })
       $(".dna-thumbnail1 h1").css({
         "opacity": (wScroll - 3742) / 418,
-        "top": 400 - (wScroll - 3742) / 418 * 300 + "px"
+        "left": 500 - (wScroll - 3742) / 418 * 440 + "px"
       })
       $(".thumb1p1").css({
         "opacity": (wScroll - 3742) / 418,
-        "top": 500 - (wScroll - 3742) / 418 * 300 + "px"
+        "left": 500 - (wScroll - 3742) / 418 * 440 + "px"
       })
       $(".thumb1p2").css({
         "opacity": (wScroll - 3742) / 418,
-        "top": 600 - (wScroll - 3742) / 418 * 300 + "px"
+        "left": (wScroll - 3742) / 418 * 540 - 480 + "px"
       })
     }
     /////////dna cells visible and invisible
@@ -513,6 +617,13 @@ $(document).ready(function() {
       $(".dna-thumbnail2 h1").css({
         "top": 800 - (wScroll - 4160) / 996 * 650 + "px"
       })
+      $(".thumb2p1").css({
+        "opacity": "0"
+      })
+      $(".dna-thumbnail1").find("*").css({
+        "opacity": "1",
+        "left": "60px"
+      })
     }
     //dna cells stop moving, thumbnail2top value 5164
     //change dna-thumbnail2 position
@@ -530,14 +641,36 @@ $(document).ready(function() {
         "transform": "matrix(1, "+((wScroll-5164)/1836*0.5-0.2) +","+((wScroll-5164)/1836*0.6-0.3)+",1,"+(200-(wScroll-5164)/1836*100)+",0)",
         "top": "-500px"
       })
-      $(".thumb2p1").css({
-        "opacity": (wScroll - 5164) / 1836,
-        "top": 400 - (wScroll - 5164) / 1836 * 180 + "px"
+      $(".dna-thumbnail2 h1").css({
+        "top": "150px"
       })
-      $(".thumb2p2").css({
-        "opacity": (wScroll - 5164) / 1836,
-        "top": 500 - (wScroll - 5164) / 1836 * 210 + "px"
-      })
+
+      if (wScroll >= 5164 && wScroll < 5497) {
+        $(".thumb2p1").css({
+          "opacity": (wScroll - 5164) / 333,
+          "top": 800 - (wScroll - 5164) / 333 * 550 + "px"
+        })
+        $(".thumb2p2").css({
+          "opacity": "0"
+        })
+      }
+
+      if (wScroll >= 5497 && wScroll < 5830) {
+        $(".thumb2p2").css({
+          "opacity": (wScroll - 5497) / 333,
+          "top": 800 - (wScroll - 5497) / 333 * 500 + "px"
+        })
+        $(".thumb2p1").css({
+          "opacity": "1",
+          "top": "250px"
+        })
+      }
+      if (wScroll >= 5830) {
+        $(".thumb2p2").css({
+          "top": "300px"
+        })
+      }
+
     }
 
 
@@ -551,6 +684,18 @@ $(document).ready(function() {
       //   "top": "5164px",
       //   "height": "836px"
       // })
+      $(".technologies h1").css({
+        "opacity": (wScroll - 6660) / 340,
+        "left": 400 - (wScroll - 6660) / 340 * 340 + "px"
+      })
+      $(".techp1").css({
+        "opacity": (wScroll - 6660) / 340,
+        "left": 400 - (wScroll - 6660) / 340 * 340 + "px"
+      })
+      $(".techp2").css({
+        "opacity": (wScroll - 6660) / 340,
+        "left": (wScroll - 6660) / 340 * 540 - 480 + "px"
+      })
       $("#thumbnail2").css({
         "opacity": (wScroll - 6660) / 340,
         "top": "505px",
@@ -598,7 +743,11 @@ $(document).ready(function() {
         "top": "7682px",
         "height": "918px"
       })
+      $(".technologies").find("*").css({
+        "left": "60px"
+      })
     }
+
     //dna cells stop moving, thumbnail2top value 5164
     //change dna-thumbnail2 position
     if (wScroll >= 7740 && wScroll <= 9700) {
@@ -621,6 +770,38 @@ $(document).ready(function() {
       })
       $(".car-pics").find("img").css({
         "opacity": "0"
+      })
+
+    }
+
+    if (wScroll >=7740 && wScroll < 8000) {
+      $(".smoothness h1").css({
+        "top": 800 - (wScroll - 7740) / 260 * 500 + "px"
+      })
+    }
+    if (wScroll >=8000 && wScroll < 8300) {
+      $(".smoothp1").css({
+        "opacity": (wScroll - 8000) / 300,
+        "top": 800 - (wScroll - 8000) / 300 * 400 + "px"
+      })
+      $(".smoothp2").css({
+        "opacity": "0"
+      })
+    }
+    if (wScroll >= 8300 && wScroll < 8600) {
+      $(".smoothp2").css({
+        "opacity": (wScroll - 8300) / 300,
+        "top": 800 - (wScroll - 8300) / 300 * 350 + "px"
+      })
+      $(".smoothp1").css({
+        "opacity": "1",
+        "top": "400px"
+      })
+    }
+    if (wScroll >= 8600 && wScroll < 9700) {
+      $(".smoothp2").css({
+          "opacity": "1",
+          "top": "450px"
       })
     }
 
