@@ -1,9 +1,45 @@
 $(document).ready(function() {
 
+
+  //////////////////////navigation.//////////////////////////
+
+
   $(".home").find("img").on("click", function() {
     $("body").animate({scrollTop: $(".journey").offset().top}, 1000);
   })
-
+  $(".sequence-text").find("img").on("click", function() {
+    $("body").animate({scrollTop: 13000}, 1000);
+  })
+  $(".goLSDNA").on("click", function() {
+    $("body").animate({scrollTop: 2940}, 1000);
+  })
+  $(".goHome").on("click", function() {
+    $("body").animate({scrollTop: 0}, 1000);
+  })
+  $(".goJourney").on("click", function() {
+    $("body").animate({scrollTop: $(".journey").offset().top}, 1000);
+  })
+  $(".goQuality").on("click", function() {
+    $("body").animate({scrollTop: 4160}, 1000);
+  })
+  $(".goQuietness").on("click", function() {
+    $("body").animate({scrollTop: 5830}, 1000);
+  })
+  $(".goTechnologies").on("click", function() {
+    $("body").animate({scrollTop: $(".technologies").offset().top}, 1000);
+  })
+  $(".goSmoothness").on("click", function() {
+    $("body").animate({scrollTop: 8600}, 1000);
+  })
+  $(".goLS").on("click", function() {
+    $("body").animate({scrollTop: 11300}, 1000);
+  })
+  $(".goGallery").on("click", function() {
+    $("body").animate({scrollTop: 13000}, 1000);
+  })
+  $(".last").on("click", function() {
+    $("body").animate({scrollTop: 14500}, 1000);
+  })
 
 
 ///////////////section journey ///////////////////////
