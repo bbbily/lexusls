@@ -723,6 +723,15 @@ $(document).ready(function() {
       $("#thumbnail2-shadow").css({
         "display": "none"
       })
+      $(".techp1").css({
+        "opacity": "0"
+      })
+      $(".techp2").css({
+        "opacity": "0"
+      })
+      $(".technologies h1").css({
+        "opacity": "0"
+      })
     }
     //dna cells2 move animation, thumbnail2top value 7000
     if (wScroll > 7000 && wScroll < 7740) {
@@ -819,26 +828,61 @@ $(document).ready(function() {
         "position": "fixed",
         "top": "0"
       })
-      if (wScroll > 9700 && wScroll <= 10100)
+      if (wScroll > 9700 && wScroll <= 10100) {
         $("#bg1").css({
           "opacity": (wScroll - 9700) / 400
         })
-      if (wScroll > 10100 && wScroll <= 10500)
+        $(".detailsh21").css({
+          "opacity": "0"
+        })
+        $(".detailsh22").css({
+          "opacity": "0"
+        })
+      }
+      if (wScroll > 10100 && wScroll <= 10500) {
         $("#bg2").css({
           "opacity": (wScroll - 10100) / 400
         })
-      if (wScroll > 10500 && wScroll <= 10900)
+        $(".detailsh21").css({
+          "opacity": (wScroll - 10100) / 400
+        })
+      }
+      if (wScroll > 10500 && wScroll <= 10900) {
         $("#bg3").css({
           "opacity": (wScroll - 10500) / 400
         })
-      if (wScroll > 10900 && wScroll <= 11300)
+        $(".detailsh22").css({
+          "opacity": (wScroll - 10500) / 400
+        })
+        $(".sequence-text h1").css({
+          "opacity": "0"
+        })
+        $(".sequence-text img").css({
+          "opacity": "0"
+        })
+      }
+      if (wScroll > 10900 && wScroll <= 11300) {
         $("#bg4").css({
           "opacity": (wScroll - 10900) / 400
         })
-      if (wScroll > 11300 && wScroll <= 11700)
+      }
+      if (wScroll > 11300 && wScroll <= 11700) {
         $(".black-bg").css({
           "opacity": (wScroll - 11300) / 400
         })
+        $(".sequence-text h1").css({
+          "opacity": (wScroll - 11300) / 400
+        })
+        $(".sequence-text img").css({
+          "opacity": (wScroll - 11300) / 400
+        })
+        $(".detailsh22").css({
+          "opacity": 1 - (wScroll - 11300) / 400
+        })
+        $(".detailsh21").css({
+          "opacity": 1 - (wScroll - 11300) / 400
+        })
+      }
     }
 
 

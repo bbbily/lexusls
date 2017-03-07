@@ -523,6 +523,7 @@ h3{
   width: 100%;
   height: 918px;
   /*z-index: -1;*/
+  overflow: hidden;
 }
 
 .dna-thumbnail1 h1 {
@@ -667,6 +668,8 @@ h3{
   width: 100%;
   height: 920px;
   overflow: hidden;
+  color: white;
+  text-align: center;
 }
 
 .car-pics > img {
@@ -685,7 +688,41 @@ h3{
   opacity: 0;
 }
 
+.sequence-text {
 
+}
+
+.detailsh21 {
+  position: absolute;
+  top: 120px;
+  width: 100%;
+  font-size: 30px;
+  line-height: 1.3em;
+  font-weight: 100;
+  opacity: 0;
+}
+.detailsh22 {
+  position: absolute;
+  top: 220px;
+  width: 100%;
+  font-size: 30px;
+  font-weight: 100;
+  opacity: 0;
+}
+.sequence-text h1 {
+  position: absolute;
+  top: 370px;
+  width: 100%;
+  font-size: 40px;
+  font-weight: 100;
+  opacity: 0;
+}
+.sequence-text > img {
+  position: absolute;
+  top: 500px;
+  left: calc(50% - 41px);
+  opacity: 0;
+}
 
 /*=========================section car-details=====================*/
 
@@ -704,6 +741,7 @@ h3{
 .car-components > div > img {
   width: auto;
   height: 100%;
+  min-width: 100%;
   min-height: 800px;
 }
 .flexslider2 {
@@ -799,17 +837,59 @@ h3{
   position: absolute;
   top: 0;
 }
-
-.triangle {
-  position: absolute;
-  top: auto;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-  opacity: 1 !important;
+.info h1 {
+  color: white;
+  padding: 50px 20px;
+  font-weight: 200;
+}
+.info > p {
+  color: white;
+  padding: 0 20px 20px 20px;
+  line-height: 1.5em;
+  font-size: 18px;
+}
+.info form {
+  display: flex;
+}
+.coloum1 {
+  flex: 5;
+}
+.coloum1 > div {
+  padding: 0 0 20px 20px;
+}
+.coloum2 > div {
+  padding: 0 0 20px 20px;
+}
+.coloum2 > div > input {
+  width: 55%;
+  height: 22px;
+}
+.coloum1 > div > input {
+  width: 55%;
+  height: 22px;
 }
 
 
+.coloum2 {
+  flex: 5;
+}
+.info span {
+  width: 150px;
+  display: inline-block;
+  font-size: 20px;
+  color: white;
+}
+.submit {
+  border: 0;
+  text-align: center;
+  vertical-align: center;
+  line-height: 0px;
+  margin-left: 20px;
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
 /*=================================section country=========================*/
 
 
@@ -817,6 +897,10 @@ h3{
   position: absolute;
   top: 15500px;
   width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.country-container {
   height: 100%;
 }
 .country-container > img {
@@ -826,15 +910,52 @@ h3{
 }
 .info-country {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  color: white;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  margin: auto;
+  /*overflow: hidden;*/
+}
+.info-country h1 {
+  font-size: 40px;
+  padding: 30px 0;
+}
+.info-country > ul {
+  display: flex;
+  padding: 30px;
+  list-style-type: none;
+}
+.info-country > ul li {
+  width: 120px;
+  border-right: 1px white solid;
+}
+.info-country > ul li:last-child {
+  border: none;
+}
+.info-country > ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.youtube {
+  background: url("images/btn-youtube.png") no-repeat;
+  /*background-size: cover;*/
+  height: 34px;
+  width: 215px;
+  margin: auto;
+  display: block;
 }
 
-
-
-
-
-
+.peng {
+  padding: 10px;
+  font-size: 15px;
+}
+.peng a {
+  color: white;
+}
 /*==============================end==================================*/
 
 /*.end{
@@ -843,3 +964,11 @@ h3{
   width: 100vw;
   z-index: 100000;
 }*/
+.triangle {
+  position: absolute;
+  top: auto;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  opacity: 1 !important;
+}
