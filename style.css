@@ -848,6 +848,7 @@ h3{
 }
 .registration-container {
   background: url("images/sec-05-bg.jpg") no-repeat center bottom;
+  background-size: cover;
   position: absolute;
   top: 77px;
   height: 100%;
