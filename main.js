@@ -372,7 +372,7 @@ $(document).ready(function() {
 
   function parallax() {
     var wScroll = $(this).scrollTop();
-    console.log(wScroll)
+    // console.log(wScroll)
 
 
 
@@ -831,6 +831,9 @@ $(document).ready(function() {
       })
       $(".smoothp2").css({
         "opacity": "0"
+      })
+      $(".smoothness h1").css({
+        "top": "300px"
       })
     }
     if (wScroll >= 8300 && wScroll < 8600) {
