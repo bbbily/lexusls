@@ -365,7 +365,7 @@ $(document).ready(function() {
   })
 
   $window.scroll(function() {
-    window.requestAnimationFrame(parallax);
+    window.webkitRequestAnimationFrame(parallax);
 
   })
 
@@ -457,7 +457,9 @@ $(document).ready(function() {
       $(".dna").css({
         "position": "fixed",
         "top": "-10px",
-        "left": "0"
+        "left": "0",
+        '-webkit-transform': 'translate3d(0, 0, 0)',
+        "-webkit-backface-visibility": "hidden"
       })
       // $(".active").css({
       //   "position": "fixed"
@@ -799,7 +801,9 @@ $(document).ready(function() {
       $(".smoothness").css({
         "position": "fixed",
         "top": "-168px",
-        "height": "calc(100vh + 168px)"
+        "height": "calc(100vh + 168px)",
+        '-webkit-transform': 'translate3d(0, 0, 0)',
+        "-webkit-backface-visibility": "hidden"
       })
       $("#thumbnail2").css({
         "transform": "matrix(1, "+((wScroll-7850)/1850*0.5-0.2) +","+((wScroll-7850)/1850*0.6-0.3)+",1,100,0)",

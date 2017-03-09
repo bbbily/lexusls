@@ -609,6 +609,7 @@ h3{
   transform: matrix(1, 0, 0.3, 1, 200, 0);
   display: none;
   z-index: 100;
+  webkit-transform: translate3d(0, 0, 0)
 }
 
 .fancybox-control {
@@ -848,6 +849,7 @@ h3{
 }
 .registration-container {
   background: url("images/sec-05-bg.jpg") no-repeat center bottom;
+  background-size: cover;
   position: absolute;
   top: 77px;
   height: 100%;
