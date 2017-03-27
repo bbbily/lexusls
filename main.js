@@ -43,7 +43,50 @@ $(document).ready(function() {
 
 
 ///////////////section journey ///////////////////////
+  var video = $("#video");
+  $(".vid").on("click", function() {
+    $(".video-container").fadeIn("fast", function() {
+      //Stuff to do *after* the animation takes place
+    })
+    video[0].play();
+  })
+  $("#play").on("click", function() {
+    video[0].play();
+    $("#play").hide();
+    $("#pause").show();
+  })
+  $("#pause").on("click", function() {
+    video[0].pause();
+    $("#play").show();
+    $("#pause").hide();
+  })
+  $("#seek-bar").on("change", function() {
+    var time = video[0].duration * $("#seek-bar").val() / 100;
+    console.log($("#seek-bar").val())
+    video[0].currentTime = time;
+  })
+  video.on("timeupdate", function() {
+    $("#seek-bar").val(100 / video[0].duration * video[0].currentTime);
+  })
+  $("#fullScreen").on("click", function() {
+    if (video[0].requestFullscreen) {
+    video[0].requestFullscreen();
+    } else if (video[0].mozRequestFullScreen) {
+      video[0].mozRequestFullScreen(); // Firefox
+    } else if (video[0].webkitRequestFullscreen) {
+      video[0].webkitRequestFullscreen(); // Chrome and Safari
+    }
+  })
 
+  $(".video-close").on("click", function() {
+    $(".video-container").fadeOut();
+    video[0].pause();
+    video[0].currentTime = 0;
+  })
+
+  $("#volume-bar").on("change", function() {
+    video[0].volume = $(this).val();
+  })
 
 ///////////slides1 imgage animation///////////////////
   var transValue = 0;
@@ -175,7 +218,7 @@ $(document).ready(function() {
 
   var index = 0;
 
-  $(".fancy-box-prev").on("click", function() {
+  $(".fancy-box-next").on("click", function() {
     // $(".fancybox-closed").css({
     //   "animation-name": "rightToZero"
     // })
@@ -183,19 +226,19 @@ $(document).ready(function() {
     //   "animation-name": "rightToOne"
     // })
     $(".fancybox-wrap:eq(" +index+ ")").removeClass("fancybox-opened").addClass("fancybox-closed");
-    $(".fancy-box-next").show();
+    $(".fancy-box-prev").show();
     index++;
     if (index == 6) $(this).hide();
     $(".fancybox-wrap:eq(" +index+ ")").removeClass("fancybox-closed").addClass("fancybox-opened");
   })
 
 
-  $(".fancy-box-next").on("click", function() {
+  $(".fancy-box-prev").on("click", function() {
 
     $(".fancybox-wrap:eq(" +index+ ")").removeClass("fancybox-opened").addClass("fancybox-closed");
-    $(".fancy-box-prev").show();
+    $(".fancy-box-next").show();
     index--;
-    if (index == 0) $(".fancy-box-next").hide();
+    if (index == 0) $(".fancy-box-prev").hide();
     $(".fancybox-wrap:eq(" +index+ ")").removeClass("fancybox-closed").addClass("fancybox-opened");
   })
 
@@ -214,8 +257,8 @@ $(document).ready(function() {
     $(".fancybox-wrap").css({
       "z-index": "200"
     })
-    if (index == 0) $(".fancy-box-next").hide();
-    if (index == 6) $(".fancy-box-prev").hide();
+    if (index == 0) $(".fancy-box-prev").hide();
+    if (index == 6) $(".fancy-box-next").hide();
     // $(".features img").addClass("fancybox-pic-hidden");
     // $(".features img:eq(" +index +")").removeClass("fancybox-pic-hidden");
     // $(".fancybox-default").removeClass("fancybox-closed").addClass("fancybox-opened");
@@ -230,7 +273,7 @@ $(document).ready(function() {
 
   var index2 = 0;
 
-  $(".fancy-box-prev2").on("click", function() {
+  $(".fancy-box-next2").on("click", function() {
     // $(".fancybox-closed").css({
     //   "animation-name": "rightToZero"
     // })
@@ -238,19 +281,19 @@ $(document).ready(function() {
     //   "animation-name": "rightToOne"
     // })
     $(".fancybox-wrap2:eq(" +index2+ ")").removeClass("fancybox-opened").addClass("fancybox-closed");
-    $(".fancy-box-next2").show();
+    $(".fancy-box-prev2").show();
     index2++;
-    if (index2 == 4) $(".fancy-box-prev2").hide();
+    if (index2 == 4) $(".fancy-box-next2").hide();
     $(".fancybox-wrap2:eq(" +index2+ ")").removeClass("fancybox-closed").addClass("fancybox-opened");
   })
 
 
-  $(".fancy-box-next2").on("click", function() {
+  $(".fancy-box-prev2").on("click", function() {
 
     $(".fancybox-wrap2:eq(" +index2+ ")").removeClass("fancybox-opened").addClass("fancybox-closed");
-    $(".fancy-box-prev2").show();
+    $(".fancy-box-next2").show();
     index2--;
-    if (index2 == 0) $(".fancy-box-next2").hide();
+    if (index2 == 0) $(".fancy-box-prev2").hide();
     $(".fancybox-wrap2:eq(" +index2+ ")").removeClass("fancybox-closed").addClass("fancybox-opened");
   })
 
@@ -269,8 +312,8 @@ $(document).ready(function() {
     $(".fancybox-wrap2").css({
       "z-index": "200"
     })
-    if (index2 == 0) $(".fancy-box-next2").hide();
-    if (index2 == 4) $(".fancy-box-prev2").hide();
+    if (index2 == 0) $(".fancy-box-prev2").hide();
+    if (index2 == 4) $(".fancy-box-next2").hide();
     // $(".features img").addClass("fancybox-pic-hidden");
     // $(".features img:eq(" +index2 +")").removeClass("fancybox-pic-hidden");
     // $(".fancybox-default").removeClass("fancybox-closed").addClass("fancybox-opened");
@@ -365,7 +408,7 @@ $(document).ready(function() {
   })
 
   $window.scroll(function() {
-    window.webkitRequestAnimationFrame(parallax);
+    window.requestAnimationFrame(parallax);
 
   })
 
@@ -456,7 +499,7 @@ $(document).ready(function() {
     if (wScroll => 1440 && wScroll <= thumbnail1Top) {
       $(".dna").css({
         "position": "fixed",
-        "top": "-10px",
+        "top": "-5vh",
         "left": "0",
         '-webkit-transform': 'translate3d(0, 0, 0)',
         "-webkit-backface-visibility": "hidden"
@@ -797,13 +840,13 @@ $(document).ready(function() {
 
     //dna cells stop moving, thumbnail2top value 5164
     //change dna-thumbnail2 position
-    if (wScroll >= 7740 && wScroll <= 9700) {
+    if (wScroll >= $(".smoothness").offset().top && wScroll <= 9700) {
       $(".smoothness").css({
         "position": "fixed",
         "top": "-168px",
-        "height": "calc(100vh + 168px)",
-        '-webkit-transform': 'translate3d(0, 0, 0)',
-        "-webkit-backface-visibility": "hidden"
+        "height": "calc(100vh + 168px)"
+        // '-webkit-transform': 'translate3d(0, 0, 0)',
+        // "-webkit-backface-visibility": "hidden"
       })
       $("#thumbnail2").css({
         "transform": "matrix(1, "+((wScroll-7850)/1850*0.5-0.2) +","+((wScroll-7850)/1850*0.6-0.3)+",1,100,0)",
@@ -950,7 +993,7 @@ $(document).ready(function() {
     if (wScroll > 12500 && wScroll <= 13000) {
       $(".car-details").css({
         "position": "fixed",
-        "top": "-5px"
+        "top": "-5vh"
       })
       $(".flexslider2").css({
         "bottom": (wScroll - 12500) / 500 * 168 - 168 + "px",
@@ -961,7 +1004,7 @@ $(document).ready(function() {
     if ( wScroll > 13000 && wScroll <= 14500) {
       $(".car-details").css({
         "position": "fixed",
-        "top": "-5px"
+        "top": "-5vh"
       })
       $(".registration").css({
         "position": "absolute",

@@ -563,6 +563,19 @@
       <li class="last"><a>register</a></li>
     </ul>
   </nav>
+  <div class="video-container">
+    <video id="video">
+      <source src="./Lexus.mp4" type="video/mp4">
+    </video>
+    <a class="video-close">CLOSE X</a>
+    <div class="video-buttons">
+      <input type="range" id="seek-bar" value="0">
+      <a id="play"><img src="images/play.png" alt="play"></a>
+      <a id="pause"><img src="images/pause.png" alt="pause"></a>
+      <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+      <a id="fullScreen"><img src="images/fullScreen.png" alt="fullScreen"></a>
+    </div>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
