@@ -1,0 +1,1070 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+h1 {
+  font-size: 48px;
+}
+
+.nav {
+  background: url("images/nav-bg.jpg") repeat 0 0;
+  width: 100%;
+  height: 77px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  z-index: 1000;
+  justify-content: space-around;
+}
+.nav > ul {
+  display: flex;
+  padding: 0px;
+  justify-content: space-between;
+  text-align: center;
+}
+.nav > ul > li {
+  background: url("images/nav-line.gif") no-repeat right;
+  width: 110px;
+  align-self: center;
+}
+.nav > ul > li.last {
+  background: none;
+}
+.nav > ul > li > a {
+  text-decoration: none;
+  font-size: 16px;
+  color: black;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.goDNA:hover > .dropdown {
+  display: block;
+}
+.dropdown {
+  position: absolute;
+  top: 2px;
+  font-size: 16px;
+  width: 110px;
+  background-color: #e4e4e4;
+  display: none;
+}
+.dropdown > li {
+  padding-top: 30px;
+  text-align: center;
+}
+.dropdown > li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.dropdown > li:last-child {
+  padding-bottom: 30px;
+}
+.dropdown > li > a {
+  font-size: 16px;
+  text-transform: capitalize;
+}
+/*==================================fancy-box==========================*/
+/*.fancybox-overlay {
+  height: auto;
+  width: auto;
+  overflow: hidden;
+}*/
+.fancybox-wrap {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 860px;
+  height: 500px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0,.6);
+  opacity: 0;
+  transition: 1s;
+  z-index: -2;
+}
+.fancybox-wrap2 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 860px;
+  height: 500px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0,.6);
+  opacity: 0;
+  transition: 1s;
+  z-index: -2;
+}
+/*.fancybox-skin {
+  position: relative;
+  padding: 20px;
+  background-color: rgba(0, 0, 0,.6);
+  width: auto;
+  height: auto;
+}*/
+.fancybox-outer {
+  position: relative;
+  height: auto;
+  width: 860px;
+}
+.fancybox-inner {
+  position: absolute;
+  height: auto;
+  width: 860px;
+}
+.features img {
+  width: 860px;
+  height: auto;
+}
+.fancy-box-nav {
+  display: inline-block;
+  width: 30%;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.fancy-box-prev, .fancy-box-prev2 {
+  left: 0;
+  cursor: pointer;
+}
+.fancy-box-next, .fancy-box-next2 {
+  right: 0;
+  cursor: pointer;
+}
+.fancy-box-prev span, .fancy-box-prev2 span {
+  background: url("images/btn-lightbox-prev.png") no-repeat;
+  position: absolute;
+  display: inline-block;
+  top: 200px;
+  height: 75px;
+  width: 47px;
+  left: 6px;
+}
+.fancy-box-prev span:hover, .fancy-box-prev2 span:hover {
+  background: url("images/btn-lightbox-prev.png") no-repeat top right;
+}
+.fancy-box-next span, .fancy-box-next2 span {
+  background: url("images/btn-lightbox-prev.png") no-repeat;
+  position: absolute;
+  display: inline-block;
+  top: 200px;
+  transform: rotate(180deg);
+  height: 75px;
+  width: 47px;
+  right: 6px;
+}
+.fancy-box-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.fancybox-opened {
+  opacity: 1;
+  transition: 0.5s;
+  /*z-index: 200;*/
+  animation-name: none;
+}
+.fancybox-closed {
+  opacity: 0;
+  transition: 0.5s;
+  animation-name: none;
+  /*z-index: -2;*/
+}
+.caption {
+  background-color: black;
+  padding: 15px;
+  margin-top: -5px;
+}
+.caption h4 {
+  font-size: 25px;
+  color: white;
+  padding: 5px;
+}
+.caption p {
+  color: white;
+  font-size: 15px;
+  font-weight: 10;
+  padding: 5px;
+}
+
+/*@@keyframes leftToZero {
+  from {transform: translate(0); opacity: 1}
+  to {transform: translate(100px); opacity: 0}
+}
+@@keyframes rightToZero {
+  from {transform: translate(0); opacity: 1}
+  to {transform: translate(-100px); opacity: 0}
+}
+@@keyframes leftToOne {
+  from {transform: translate(-100px); opacity: 0}
+  to {transform: translate(0); opacity: 1}
+}
+@@keyframes rightToOne {
+  from {transform: translate(100px); opacity: 0}
+  to {transform: translate(0); opacity: 1}
+}*/
+/*.fancybox-pic-hidden {
+  display: none;
+}*/
+
+/*===========================section home========================*/
+#scroll-body {
+  height: 17000px;
+}
+.home {
+  background: url("images/sec-01-bg.jpg") no-repeat center;
+  /*background-size: cover;*/
+  width: 100%;
+  background-color: #d4dbdb;
+  height: 720px;
+  text-align: center;
+  position: relative;
+}
+.home h1 {
+  padding: 80px 0 10px 0;
+}
+h3{
+  font-size: 30px;
+  padding: 10px 0;
+}
+.home > img {
+  position: absolute;
+  bottom: 87.5px;
+  z-index: 20;
+  cursor: pointer;
+}
+
+
+/*=============================section journey=========================*/
+
+.journey {
+  background: url("images/sec-02-bg.jpg") no-repeat center;
+  background-size: cover;
+}
+.journey-container {
+  height: 720px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.tire {
+  opacity: 1;
+  position: absolute;
+  top: 5px;
+  left: 100%;
+  transform: rotate(360deg);
+  display: block;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+.shadow {
+  position: absolute;
+  top: 5px;
+  left: 100%;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes roll {
+  from { left: 100%; transform: rotate(360deg)}
+  to { left: -500px; transform: rotate(0deg)}
+}
+@keyframes shadowMove {
+  from {left: 100%}
+  to {left: -500px}
+}
+
+
+
+/*=========================section journey=slides=========================================*/
+.flexslider1 {
+  width: 800px;
+  position: absolute;
+  left: 200px;
+  right: 200px;
+  margin: auto;
+  top: 640px;
+  opacity: 0;
+}
+.flex-viewport {
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  padding: 0px;
+  width: 800%;
+  list-style-type: none;
+}
+.slides > li {
+  padding-top: 380px;
+  width: 800px;
+  display: block;
+  position: relative;
+  list-style-type: none;
+}
+
+.slides li.first h1 {
+  position: absolute;
+  top: 35%;
+}
+.slides li.first #p1 {
+  position: absolute;
+  top: 50%;
+  font-size: 20px;
+  line-height: 1em;
+}
+.slides li.first #p2 {
+  position: absolute;
+  top: 65%;
+  font-size: 20px;
+  line-height: 1em;
+}
+.slides li p {
+  font-size: 18px;
+  line-height: 1.5em;
+}
+.slides li h1.year {
+  color: #dfdfdf;
+  font-size: 220px;
+  font-weight: 900;
+  position: absolute;
+  top: -20px;
+  left: 0px;
+  letter-spacing: -10px;
+}
+.video-shadow {
+  background: url("images/sec-02-vid-shadow.png") no-repeat top center;
+  height: 27px;
+  width: 498px;
+  position: absolute;
+  top: 238px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+.vid {
+  background: url("images/sec-02-vid.jpg") no-repeat top center;
+  height: 230px;
+  width: 419px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0px;
+  margin: auto;
+  cursor: pointer;
+}
+.vid:hover {
+  background: url("images/sec-02-vid.jpg") no-repeat bottom center;
+}
+.slides li img {
+  position: absolute;
+  /*top: 140px;
+  right: 0;*/
+  top: 80px;
+  right: -616px;
+  opacity: 0;
+}
+
+@keyframes carMove {
+  from {left: 100%}
+  to {left: -500px}
+}
+
+
+.flex-arrow {
+  list-style-type: none;
+  cursor: pointer;
+}
+.flex-prev {
+  position: absolute;
+  top: 50%;
+  left: -95px;
+  background: url("images/btn-arrow.png") no-repeat;
+  width: 53px;
+  height: 89px;
+  display: none;
+}
+.flex-next {
+  position: absolute;
+  top:50%;
+  right: -95px;
+  background: url("images/btn-arrow.png") no-repeat;
+  width: 53px;
+  height: 89px;
+  transform: rotate(180deg);
+}
+.timeline-wrapper {
+  position: absolute;
+  top: 640px;
+  left: 50%;
+  width: 422px;
+  margin-left: -211px;
+  opacity: 0;
+}
+#timeline-bar {
+  background: url("images/timeline-gray.png") no-repeat;
+  width: 100%;
+  height: 14px;
+}
+#timeline-bar-current {
+  background: url("images/timeline-blue.png") no-repeat;
+  height: 14px;
+  width: 41px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#timeline-years {
+  display: flex;
+  padding: 0px;
+  position: absolute;
+  left: 26px;
+  bottom: 0;
+  padding-bottom: 16px;
+  list-style-type: none;
+  width: 410px;
+  justify-content: space-between;
+}
+
+#timeline-years > li a {
+  font-size: 20px;
+  text-decoration: none;
+  padding-bottom: 14px;
+  cursor: pointer;
+}
+
+
+
+/*=====================section dna=================*/
+
+.dna {
+  background: black;
+  position: relative;
+  width: 100%;
+  height: 105vh;
+  /*overflow: hidden;*/
+}
+.dna > img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}
+#mini1 {
+  opacity: 1;
+}
+.dna-mini {
+  background: url("images/sec-03-dna-mini.png") no-repeat left top;
+  position: absolute;
+  left: 30px;
+  top: 320px;
+  width: 109px;
+  height: 0px;
+}
+.bg-radial {
+  background: url("images/sec-03a-bg.png") no-repeat left center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.active {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.active h1 {
+  font-size: 48px;
+  color: white;
+  opacity: 0;
+}
+.active p {
+  font-size: 20px;
+  color: white;
+  opacity: 0;
+}
+
+.firsth1 {
+  position: absolute;
+  top: 400px;
+  left: 30px;
+  width: 800px;
+  opacity: 1;
+}
+.secondh1 {
+  position: absolute;
+  top: 240px;
+  left: 450px;
+  width: 400px;
+}
+.firstp {
+  position: absolute;
+  top: 325px;
+  left: 500px;
+  width: 600px;
+}
+.secondp {
+  position: absolute;
+  top: 380px;
+  left: 550px;
+  width: 600px;
+}
+.thirdp {
+  position: absolute;
+  top: 440px;
+  left: 550px;
+  width: 600px;
+}
+.forthp {
+  position: absolute;
+  top: 500px;
+  left: 500px;
+  width: 600px;
+}
+
+
+
+/*============================section dna cells==============================*/
+
+.dna-thumbnail1 {
+  background: url("images/sec-03b-bg.jpg") no-repeat right;
+  background-size: cover;
+  position: absolute;
+  top: 4160px;
+  width: 100%;
+  height: 918px;
+  /*z-index: -1;*/
+  overflow: hidden;
+}
+
+.dna-thumbnail1 h1 {
+  position: absolute;
+  top: 200px;
+  left: 500px;
+  opacity: 0;
+}
+.thumb1p1 {
+  position: absolute;
+  top: 300px;
+  left: 500px;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+.thumb1p2 {
+  position: absolute;
+  top: 400px;
+  left: -480px;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+.dna-thumbnail2 {
+  background: url("images/sec-03c-bg.jpg") no-repeat right;
+  background-size: cover;
+  position: absolute;
+  top: 5164px;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.dna-thumbnail2 h1 {
+  position: absolute;
+  top: 800px;
+  left: 60px;
+}
+.thumb2p1 {
+  position: absolute;
+  top: 800px;
+  left: 60px;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+.thumb2p2 {
+  position: absolute;
+  top: 800px;
+  left: 60px;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+#thumbnail1, #thumbnail1-shadow, #thumbnail2, #thumbnail2-shadow {
+  position: fixed;
+  top: 505px;
+  transform: matrix(1, 0, 0.3, 1, 200, 0);
+  display: none;
+  z-index: 100;
+  webkit-transform: translate3d(0, 0, 0)
+}
+
+.fancybox-control {
+  cursor: pointer;
+}
+
+/*================================section technologies=======================*/
+
+.technologies {
+  background: url("images/sec-03d-bg.jpg") no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 7000px;
+  height: 100%;
+  min-height: 780px;
+  width: 100%;
+  color: white;
+  overflow: hidden;
+  /*display: block;*/
+}
+.technologies h1 {
+  position: absolute;
+  top: 200px;
+  left: 400px;
+  opacity: 0;
+}
+.techp1 {
+  position: absolute;
+  top: 280px;
+  left: 400px;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+.techp2 {
+  position: absolute;
+  top: 400px;
+  left: -480px;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+.smoothness {
+  background: url("images/sec-03e-bg.jpg") no-repeat bottom;
+  background-size: cover;
+  position: absolute;
+  top: 7682px;
+  height: 100vh;
+  width: 100%;
+  /*overflow-x: hidden;*/
+}
+.smoothness h1 {
+  position: absolute;
+  top: 800px;
+  left: 60px;
+}
+.smoothp1 {
+  position: absolute;
+  top: 800px;
+  left: 60px;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+.smoothp2 {
+  position: absolute;
+  top: 800px;
+  left: 60px;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+
+/*======================section car-sequence====================*/
+
+
+.car-sequence {
+  background-color: black;
+  position: absolute;
+  top: 9700px;
+  width: 100%;
+  height: 100vh;
+  min-height: 920px;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+.car-pics > img {
+  position: absolute;
+  left: 50%;
+  margin-left: -640px;
+  opacity: 0;
+}
+
+.black-bg {
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  opacity: 0;
+}
+
+.sequence-text {
+
+}
+
+.detailsh21 {
+  position: absolute;
+  top: 120px;
+  width: 100%;
+  font-size: 30px;
+  line-height: 1.3em;
+  font-weight: 100;
+  opacity: 0;
+}
+.detailsh22 {
+  position: absolute;
+  top: 220px;
+  width: 100%;
+  font-size: 30px;
+  font-weight: 100;
+  opacity: 0;
+}
+.sequence-text h1 {
+  position: absolute;
+  top: 370px;
+  width: 100%;
+  font-size: 40px;
+  font-weight: 100;
+  opacity: 0;
+}
+.sequence-text > img {
+  position: absolute;
+  top: 500px;
+  left: calc(50% - 41px);
+  opacity: 0;
+}
+
+/*=========================section car-details=====================*/
+
+.car-details {
+  position: absolute;
+  width: 100%;
+  top: 12500px;
+  height: 105vh;
+}
+.car-components > div {
+  position: absolute;
+  width: 100%;
+  height: 105vh;
+  overflow: hidden;
+}
+.car-components > div > img {
+  width: auto;
+  height: 100%;
+  min-width: 100%;
+  min-height: 800px;
+}
+.flexslider2 {
+  background: rgba(0, 0, 0, .6);
+  position: absolute;
+  bottom: -168px;
+  width: 100%;
+  height: 168px;
+  opacity: 0;
+  overflow: hidden;
+}
+.viewport2 {
+  width: 816px;
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+  padding-top: 0px;
+}
+.components-opened {
+  opacity: 1;
+  transition: 0.5s;
+  /*z-index: 200;*/
+}
+.components-closed {
+  opacity: 0;
+  transition: 0.5s;
+  /*z-index: -2;*/
+}
+.slides2 {
+  width: 2000%;
+  list-style-type: none;
+  display: flex;
+  transition: 0.6s;
+}
+.slides2 > li {
+  margin: 5px;
+}
+.slides2 > li > a {
+  background: url("images/gallery-thumb-frame.png") no-repeat left bottom;
+  height: 148px;
+  width: 126px;
+  display: block;
+  cursor: pointer;
+}
+.slides2 > li > a > img {
+  padding: 9px 0 0 6px;
+}
+
+.flex-prev2 {
+  background: url("images/btn-arrow.png") no-repeat;
+  position: absolute;
+  top: 40px;
+  left: calc(50% - 500px);
+  width: 53px;
+  height: 89px;
+  display: none;
+  cursor: pointer;
+}
+.flex-next2 {
+  position: absolute;
+  top: 40px;
+  right: calc(50% - 500px);
+  background: url("images/btn-arrow.png") no-repeat;
+  width: 53px;
+  height: 89px;
+  transform: rotate(180deg);
+  display: inline-block;
+  cursor: pointer;
+}
+
+
+/*================================section registration===========================*/
+
+.registration {
+  position: absolute;
+  top: 14500px;
+  width: 100%;
+  height: 100%;
+}
+.registration-container {
+  background: url("images/sec-05-bg.jpg") no-repeat center bottom;
+  background-size: cover;
+  position: absolute;
+  top: 77px;
+  height: 100%;
+  width: 100%;
+  z-index: 11;
+}
+.cover {
+  background: black;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+.info h1 {
+  color: white;
+  padding: 50px 20px;
+  font-weight: 200;
+}
+.info > p {
+  color: white;
+  padding: 0 20px 20px 20px;
+  line-height: 1.5em;
+  font-size: 18px;
+}
+.info form {
+  display: flex;
+}
+.coloum1 {
+  flex: 5;
+}
+.coloum1 > div {
+  padding: 0 0 20px 20px;
+}
+.coloum2 > div {
+  padding: 0 0 20px 20px;
+}
+.coloum2 > div > input {
+  width: 55%;
+  height: 22px;
+}
+.coloum1 > div > input {
+  width: 55%;
+  height: 22px;
+}
+
+
+.coloum2 {
+  flex: 5;
+}
+.info span {
+  width: 150px;
+  display: inline-block;
+  font-size: 20px;
+  color: white;
+}
+.submit {
+  border: 0;
+  text-align: center;
+  vertical-align: center;
+  line-height: 0px;
+  margin-left: 20px;
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
+/*=================================section country=========================*/
+
+
+.country {
+  position: absolute;
+  top: 15500px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.country-container {
+  height: 100%;
+}
+.country-container > img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.info-country {
+  position: absolute;
+  color: white;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  margin: auto;
+  /*overflow: hidden;*/
+}
+.info-country h1 {
+  font-size: 40px;
+  padding: 30px 0;
+}
+.info-country > ul {
+  display: flex;
+  padding: 30px;
+  list-style-type: none;
+  justify-content: center;
+}
+.info-country > ul li {
+  width: 120px;
+  border-right: 1px white solid;
+}
+.info-country > ul li:last-child {
+  border: none;
+}
+.info-country > ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.youtube {
+  background: url("images/btn-youtube.png") no-repeat;
+  /*background-size: cover;*/
+  height: 34px;
+  width: 215px;
+  margin: auto;
+  display: block;
+}
+
+.peng {
+  padding: 10px;
+  font-size: 15px;
+}
+.peng a {
+  color: white;
+}
+/*==============================end==================================*/
+
+/*.end{
+  background: white;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100000;
+}*/
+.triangle {
+  position: absolute;
+  top: auto;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  opacity: 1 !important;
+}
+
+.video-container {
+  background: black;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  display: none;
+}
+
+#video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.video-buttons {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+
+#seek-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#play, #pause {
+
+  position: absolute;
+  left: 20px;
+  top: 0;
+}
+
+#play {
+  display: none;
+}
+
+#play > img, #pause > img {
+  height: 16px;
+  width: 16px;
+}
+#volume-bar {
+  position: absolute;
+  top: 0;
+  right: 50px;
+}
+#fullScreen {
+  position: absolute;
+  right: 20px;
+  top: 0;
+}
+
+.video-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  padding: 10px;
+  cursor: pointer;
+}
